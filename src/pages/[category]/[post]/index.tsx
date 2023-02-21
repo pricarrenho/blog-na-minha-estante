@@ -21,11 +21,12 @@ export default function Post({ post }: PostProps) {
 }
 
 export async function getStaticPaths() {
-  const posts: any = await getPosts();
+  const posts = await getPosts();
 
-  const paths = posts.map((post: any) => {
+  const paths = posts.map((post) => {
+    const category = post.category?.slug || "";
     return {
-      params: { post: post.slug, category: post.category.slug },
+      params: { post: post.slug, category: category },
     };
   });
 

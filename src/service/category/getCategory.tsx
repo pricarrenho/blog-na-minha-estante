@@ -1,9 +1,9 @@
-import { gql } from "graphql-request";
+import { GetCategoryQuery } from "@/gql/graphql";
 import { api } from "../api";
 import { GET_CATEGORY } from "./queries";
 
 export const getCategory = async () => {
-  const { categories } = await api.request(GET_CATEGORY);
+  const { category } = await api.request<GetCategoryQuery>(GET_CATEGORY);
 
-  return categories;
+  return category;
 };

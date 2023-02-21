@@ -3,13 +3,16 @@ import Link from "next/link";
 
 export default function Home({ categories }: any) {
   return (
-    <ul>
-      {categories.map((category: any) => (
-        <li key={category.name}>
-          <Link href={category.slug}>{category.name}</Link>
-        </li>
-      ))}
-    </ul>
+    <main>
+      <h1>Todas as categorias</h1>
+      <ul>
+        {categories.map((category: any) => (
+          <li key={category.name}>
+            <Link href={category.slug}>{category.name}</Link>
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 }
 

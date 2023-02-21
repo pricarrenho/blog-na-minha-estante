@@ -1,7 +1,7 @@
 import { gql } from "graphql-request";
 
 export const GET_POST = gql`
-  query Post($post: String) {
+  query getPost($post: String) {
     post(where: { slug: $post }) {
       title
       slug
@@ -17,7 +17,7 @@ export const GET_POST = gql`
 `;
 
 export const GET_POSTS = gql`
-  query Posts {
+  query getPosts {
     posts {
       slug
       title
@@ -30,7 +30,7 @@ export const GET_POSTS = gql`
 `;
 
 export const GET_POSTS_BY_CATEGORY = gql`
-  query Posts($category: String) {
+  query getPostsByCategory($category: String) {
     posts(where: { category: { slug: $category } }) {
       slug
       title

@@ -5,24 +5,36 @@ import { GetStaticProps } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function Category(props: any) {
+type Post = {
+  slug: string;
+  title: string;
+};
+
+type CategoryProps = {
+  posts: Post[];
+};
+
+export default function Category({ posts }: CategoryProps) {
   const route = useRouter();
 
   return (
-    <ul>
-      {props.post?.map((post: any) => (
-        <li key={post.slug}>
-          <Link href={`${route.asPath}/${post.slug}`}>{post.title}</Link>
-        </li>
-      ))}
-    </ul>
+    <main>
+      <h1>Post da categoria</h1>
+      <ul>
+        {posts?.map((post) => (
+          <li key={post.slug}>
+            <Link href={`${route.asPath}/${post.slug}`}>{post.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 }
 
 export async function getStaticPaths() {
-  const categories: any = await getCategories();
+  const categories = await getCategories();
 
-  const paths = categories.map((category: any) => ({
+  const paths = categories.map((category) => ({
     params: { category: category.slug },
   }));
 
@@ -32,11 +44,11 @@ export async function getStaticPaths() {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const category = params?.category as string;
 
-  const post = await getPostsByCategory(category);
+  const posts = await getPostsByCategory(category);
 
   return {
     props: {
-      post,
+      posts,
     },
   };
 };
