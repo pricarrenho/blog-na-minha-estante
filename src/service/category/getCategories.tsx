@@ -1,0 +1,8 @@
+import { api } from "../api";
+import { GET_CATEGORIES } from "./queries";
+
+export const getCategories = async () => {
+  const { categories } = await api.request(GET_CATEGORIES);
+
+  return categories;
+};
