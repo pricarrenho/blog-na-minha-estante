@@ -1,30 +1,29 @@
-import { api } from "@/service/api";
+import { GetCategoryQuery } from "@/gql/graphql";
 import { getCategories } from "@/service/category/getCategories";
-import { getPostsByCategory } from "@/service/post/getPostsbyCategory";
+import { getCategory } from "@/service/category/getCategory";
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-type Post = {
-  slug: string;
-  title: string;
-};
+type CategoryProps = {} & GetCategoryQuery;
 
-type CategoryProps = {
-  posts: Post[];
-};
-
-export default function Category({ posts }: CategoryProps) {
+export default function Category({ category }: CategoryProps) {
   const route = useRouter();
 
   return (
     <main>
       <h1>Post da categoria</h1>
       <ul>
-        {posts?.map((post) => (
+        {category?.post?.map((post) => (
           <li key={post.slug}>
             <Link href={`${route.asPath}/${post.slug}`}>{post.title}</Link>
           </li>
+        ))}
+      </ul>
+      <h2>Subcategorias</h2>
+      <ul>
+        {category?.subcategories.map((subcategory) => (
+          <li key={subcategory.name}>{subcategory.name}</li>
         ))}
       </ul>
     </main>
@@ -42,13 +41,13 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const category = params?.category as string;
+  const categorySlug = params?.category as string;
 
-  const posts = await getPostsByCategory(category);
+  const category = await getCategory(categorySlug);
 
   return {
     props: {
-      posts,
+      category,
     },
   };
 };
