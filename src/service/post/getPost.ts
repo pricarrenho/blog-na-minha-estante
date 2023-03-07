@@ -1,4 +1,4 @@
-import { GetPostQuery } from "@/gql/graphql";
+import { GetPostQuery } from "gql/graphql";
 import { api } from "../api";
 import { GET_POST } from "./queries";
 

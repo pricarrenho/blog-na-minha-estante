@@ -1,4 +1,4 @@
-import { GetSubcategoriesQuery } from "@/gql/graphql";
+import { GetSubcategoriesQuery } from "gql/graphql";
 import { api } from "../api";
 import { GET_SUBCATEGORIES } from "./queries";
 

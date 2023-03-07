@@ -1,18 +1,9 @@
-import { GetSubcategoriesQuery } from "@/gql/graphql";
-import { getSubcategories } from "@/service/subcategories/getSubcategory";
-
-type SubcategoriesProps = {} & GetSubcategoriesQuery;
+import { getSubcategories } from "service/subcategories/getSubcategory";
+import { SubcategoriasTemplate } from "templates/Subcategory";
+import { SubcategoriesProps } from "templates/Subcategory/types";
 
 export default function Subcategorias({ subcategories }: SubcategoriesProps) {
-  return (
-    <div>
-      <ul>
-        {subcategories?.map((subcategory) => (
-          <li key={subcategory.name}>{subcategory.name}</li>
-        ))}
-      </ul>
-    </div>
-  );
+  return <SubcategoriasTemplate subcategories={subcategories} />;
 }
 
 export async function getStaticProps() {

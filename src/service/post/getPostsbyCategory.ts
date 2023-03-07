@@ -1,6 +1,6 @@
-import { GetPostsByCategoryQuery } from "@/gql/graphql";
+import { GetPostsByCategoryQuery } from "gql/graphql";
 import { api } from "../api";
-import { GET_POSTS, GET_POSTS_BY_CATEGORY } from "./queries";
+import { GET_POSTS_BY_CATEGORY } from "./queries";
 
 export const getPostsByCategory = async (category: string) => {
   const { posts } = await api.request<GetPostsByCategoryQuery>(
