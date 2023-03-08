@@ -16,7 +16,6 @@ export const GlobalStyle = createGlobalStyle`
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      background: ${theme.colors.background};
     }
 
     html,
@@ -35,10 +34,37 @@ export const GlobalStyle = createGlobalStyle`
 
     a {
       text-decoration: none;
+      font-size: ${theme.font.sizes.md};
+      font-weight: 500;
+      color: ${theme.colors.fuchsia[900]};
+
+      &:hover {
+        color: ${theme.colors.fuchsia[600]};
+      }
     }
 
     li {
       list-style: none;
+    }
+
+    h1 {
+      font-size: ${theme.font.sizes.xl};
+    }
+
+    p,
+    blockquote {
+      color: ${theme.colors.neutral[500]};
+      font-size: ${theme.font.sizes.md};
+      line-height: 32px;
+    }
+
+    blockquote {
+      background: ${theme.colors.fuchsia[100]};
+      font-weight: 500;
+      padding: 16px;
+      border-radius: 8px;
+      text-align: center;
+      margin: 32px;
     }
 
     button {

@@ -1,17 +1,17 @@
+import { GetPostQuery } from "gql/graphql";
 import { GetStaticProps } from "next";
 import { getPost } from "service/post/getPost";
 import { getPosts } from "service/post/getPosts";
-import { PostTemplate } from "templates/Post";
-import { PostProps } from "templates/Post/types";
+import { PostTemplate, PostTemplateProps } from "templates/Post";
 
-export default function Post({ post }: PostProps) {
+export default function Post({ post }: PostTemplateProps) {
   return <PostTemplate post={post} />;
 }
 
 export async function getStaticPaths() {
   const posts = await getPosts();
 
-  const paths = posts.map((post: any) => {
+  const paths = posts.map((post) => {
     const category = post.category?.slug || "";
     return {
       params: { post: post.slug, category: category },
@@ -26,9 +26,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const post = await getPost(paramPost);
 
+  const currentPost = `/api/post/${paramPost}`;
+
   return {
     props: {
-      post,
+      fallback: {
+        [currentPost]: post,
+      },
+      post: paramPost,
     },
   };
 };

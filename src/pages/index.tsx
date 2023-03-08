@@ -1,9 +1,8 @@
-import Link from "next/link";
 import { getCategories } from "service/category/getCategories";
 import { HomeTemplate } from "templates/Home";
 
-export default function Home({ categories }: any) {
-  return <HomeTemplate categories={categories} />;
+export default function Home() {
+  return <HomeTemplate />;
 }
 
 export async function getStaticProps() {
@@ -12,7 +11,9 @@ export async function getStaticProps() {
   return {
     revalidate: 60,
     props: {
-      categories,
+      fallback: {
+        "/api/categories": categories,
+      },
     },
   };
 }

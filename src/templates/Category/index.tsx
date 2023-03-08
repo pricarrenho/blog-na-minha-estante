@@ -2,12 +2,14 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { CategoryProps } from "./types";
 import * as S from "./styles";
+import { Header } from "components/Header";
 
 export function CategoryTemplate({ category }: CategoryProps) {
   const route = useRouter();
 
   return (
     <main>
+      <Header />
       <h1>Post da categoria</h1>
       <ul>
         {category?.post?.map((post) => (
