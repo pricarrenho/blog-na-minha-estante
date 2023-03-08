@@ -1,4 +1,4 @@
-import { GetCategoryQuery } from "@/gql/graphql";
+import { GetCategoryQuery } from "gql/graphql";
 import { api } from "../api";
 import { GET_CATEGORY } from "./queries";
 
