@@ -1,15 +1,30 @@
 const colors = {
   black: "#13131A",
   white: "#FFFFFF",
-  pink50: "#f7edf4",
-  pink100: "#F5D5ED",
-  pink200: "#EBB9DF",
-  pink300: "#D991BA",
-  pink400: "#D946EF",
-  neutral50: "#F5F5F5",
-  neutral200: "#D4D4D4",
-  neutral400: "#737373",
-  neutral800: "#171717",
+  fuchsia: {
+    50: "#FDF4FF",
+    100: "#FAE8FF",
+    200: "#F5D0FE",
+    300: "#F0ABFC",
+    400: "#E879F9",
+    500: "#D946EF",
+    600: "#C026D3",
+    700: "#A21CAF",
+    800: "#86198F",
+    900: "#701A75",
+  },
+  neutral: {
+    50: "#FAFAFA",
+    100: "#F5F5F5",
+    200: "#E5E5E5",
+    300: "#D4D4D4",
+    400: "#A3A3A3",
+    500: "#737373",
+    600: "#525252",
+    700: "#404040",
+    800: "#262626",
+    900: "#171717",
+  },
 };
 
 const font = {
@@ -24,7 +39,7 @@ const font = {
 export const themeWhite = {
   colors: {
     ...colors,
-    background: colors.pink50,
+    background: colors.fuchsia[50],
   },
   font,
 };
