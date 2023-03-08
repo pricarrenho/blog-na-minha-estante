@@ -1,18 +1,27 @@
-import { PostProps } from "./types";
 import { Container } from "components/Container";
-import * as S from "./styles";
 import { Header } from "components/Header";
+import { getPost } from "service/post/getPost";
+import useSWR from "swr";
+import * as S from "./styles";
 
-export function PostTemplate({ post }: PostProps) {
+export type PostTemplateProps = {
+  post: string;
+};
+
+export function PostTemplate({ post }: PostTemplateProps) {
+  const { data } = useSWR(`/api/post/${post}`, () => getPost(post));
+
   return (
     <>
       <Header />
       <Container>
         <S.Wrapper>
-          <S.CardPost>
-            <h1>{post.title}</h1>
-            <main dangerouslySetInnerHTML={{ __html: post.content.html }} />
-          </S.CardPost>
+          {data && (
+            <S.CardPost>
+              <h1>{data.title}</h1>
+              <main dangerouslySetInnerHTML={{ __html: data.content.html }} />
+            </S.CardPost>
+          )}
           <p>FOOTER</p>
         </S.Wrapper>
       </Container>
