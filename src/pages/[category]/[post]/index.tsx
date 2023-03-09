@@ -1,8 +1,8 @@
-import { GetPostQuery } from "gql/graphql";
 import { GetStaticProps } from "next";
 import { getPost } from "service/post/getPost";
 import { getPosts } from "service/post/getPosts";
-import { PostTemplate, PostTemplateProps } from "templates/Post";
+import { PostTemplate } from "templates/Post";
+import { PostTemplateProps } from "templates/Post/types";
 
 export default function Post({ post }: PostTemplateProps) {
   return <PostTemplate post={post} />;

@@ -56,6 +56,7 @@ export const GlobalStyle = createGlobalStyle`
       color: ${theme.colors.neutral[500]};
       font-size: ${theme.font.sizes.md};
       line-height: 32px;
+      text-align: justify;
     }
 
     blockquote {
