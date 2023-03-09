@@ -3,14 +3,11 @@ import { Header } from "components/Header";
 import { getPost } from "service/post/getPost";
 import { PostTemplateProps } from "./types";
 import useSWR from "swr";
-import * as S from "./styles";
 import CardAuthor from "components/CardAuthor";
-import Image from "next/image";
+import * as S from "./styles";
 
 export function PostTemplate({ post }: PostTemplateProps) {
   const { data } = useSWR(`/api/post/${post}`, () => getPost(post));
-
-  console.log(data);
 
   return (
     <>
