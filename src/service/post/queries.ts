@@ -12,6 +12,9 @@ export const GET_POST = gql`
       content {
         html
       }
+      bannerImage {
+        url
+      }
     }
   }
 `;
