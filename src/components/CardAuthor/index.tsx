@@ -1,14 +1,14 @@
 import photoPerfil from "../../assets/img/photoPerfil.png";
 import * as S from "./styles";
 
-const CardAuthor = () => {
+function CardAuthor() {
   return (
     <S.Perfil>
       <S.AuthorImg
         src={photoPerfil}
         alt="Foto do autor"
-        width={200}
-        height={200}
+        width={150}
+        height={150}
       />
       <h2>Priscilla Carrenho</h2>
       <p>
@@ -18,6 +18,6 @@ const CardAuthor = () => {
       </p>
     </S.Perfil>
   );
-};
+}
 
 export default CardAuthor;
