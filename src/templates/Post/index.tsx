@@ -1,10 +1,13 @@
-import { Container } from "components/Container";
-import { Header } from "components/Header";
+import Container from "components/Container";
+import Header from "components/Header";
 import { getPost } from "service/post/getPost";
 import { PostTemplateProps } from "./types";
-import useSWR from "swr";
 import CardAuthor from "components/CardAuthor";
+import Footer from "components/Footer";
+
+import useSWR from "swr";
 import * as S from "./styles";
+import CardPostsP from "components/CardPostsP";
 
 export function PostTemplate({ post }: PostTemplateProps) {
   const { data } = useSWR(`/api/post/${post}`, () => getPost(post));
@@ -12,28 +15,42 @@ export function PostTemplate({ post }: PostTemplateProps) {
   return (
     <>
       <Header />
+
       <Container>
         <S.Wrapper>
           {data && (
             <S.CardPost>
               <S.PhotoBook
                 src={data.bannerImage.url}
-                alt=""
+                alt="Foto do livro"
                 width={800}
-                height={500}
+                height={150}
               />
+
               <S.Content>
                 <h1>{data.title}</h1>
+                {data && (
+                  <S.PhotoBookLeft
+                    src={data.bannerImage.url}
+                    alt="Foto do livro"
+                    width={700}
+                    height={500}
+                  />
+                )}
                 <main dangerouslySetInnerHTML={{ __html: data.content.html }} />
               </S.Content>
             </S.CardPost>
           )}
 
-          <CardAuthor />
-
-          <p>FOOTER</p>
+          <S.LeftContent>
+            <CardAuthor />
+          </S.LeftContent>
         </S.Wrapper>
+
+        <CardPostsP title />
       </Container>
+
+      <Footer />
     </>
   );
 }

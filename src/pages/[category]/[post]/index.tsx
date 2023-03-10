@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 
   const paths = posts.map((post) => {
     const category = post.category?.slug || "";
+
     return {
       params: { post: post.slug, category: category },
     };

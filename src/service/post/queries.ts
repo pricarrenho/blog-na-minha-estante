@@ -28,6 +28,10 @@ export const GET_POSTS = gql`
         name
         slug
       }
+      bannerImage {
+        url
+      }
+      description
     }
   }
 `;

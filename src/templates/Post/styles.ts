@@ -2,32 +2,50 @@ import Image from "next/image";
 import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
-  ${() => css`
+  ${({ theme }) => css`
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
   `}
 `;
 
 export const CardPost = styled.div`
   ${({ theme }) => css`
-    gap: 48px;
     background: ${theme.colors.fuchsia[50]};
-    box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 16px 2px ${theme.colors.boxShadow};
     border-radius: 8px;
-
-    h1 {
-      color: ${theme.colors.fuchsia[900]};
-    }
+    margin-bottom: 48px;
   `}
-`;
-
-export const Content = styled.div`
-  padding: 24px;
 `;
 
 export const PhotoBook = styled(Image)`
   object-fit: cover;
-  object-position: center center;
   border-radius: 8px 8px 0px 0px;
+  mask-image: linear-gradient(to top, transparent 10%, white 75%);
+  opacity: 0.5;
 `;
+
+export const Content = styled.div`
+  ${({ theme }) => css`
+    padding: 0px 48px 40px;
+    display: grid;
+
+    h1 {
+      color: ${theme.colors.fuchsia[900]};
+      margin-top: -56px;
+      margin-bottom: 24px;
+    }
+
+    blockquote {
+      margin-top: 64px;
+    }
+  `}
+`;
+
+export const LeftContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`;
+
+export const PhotoBookLeft = styled(Image)``;

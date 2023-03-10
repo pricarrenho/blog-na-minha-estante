@@ -12,7 +12,10 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 62.5%;
     }
 
-    body {
+    body,
+    h1,
+    h2,
+    h3 {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -35,11 +38,11 @@ export const GlobalStyle = createGlobalStyle`
     a {
       text-decoration: none;
       font-size: ${theme.font.sizes.md};
-      font-weight: 500;
-      color: ${theme.colors.fuchsia[900]};
+      color: ${theme.colors.neutral[700]};
+      font-weight: 600;
 
       &:hover {
-        color: ${theme.colors.fuchsia[600]};
+        color: ${theme.colors.neutral[500]};
       }
     }
 
@@ -51,8 +54,7 @@ export const GlobalStyle = createGlobalStyle`
       font-size: ${theme.font.sizes.xl};
     }
 
-    p,
-    blockquote {
+    p {
       color: ${theme.colors.neutral[500]};
       font-size: ${theme.font.sizes.md};
       line-height: 32px;
@@ -60,12 +62,13 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     blockquote {
+      color: ${theme.colors.neutral[600]};
       background: ${theme.colors.fuchsia[100]};
+      font-size: ${theme.font.sizes.md};
       font-weight: 500;
-      padding: 16px;
+      padding: 24px;
       border-radius: 8px;
       text-align: center;
-      margin: 32px;
     }
 
     button {

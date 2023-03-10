@@ -25,6 +25,7 @@ const colors = {
     800: "#262626",
     900: "#171717",
   },
+  boxShadow: "#00000033",
 };
 
 const font = {
