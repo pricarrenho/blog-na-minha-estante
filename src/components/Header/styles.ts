@@ -13,9 +13,6 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 1200px;
     padding: 8px;
   `}
 `;
