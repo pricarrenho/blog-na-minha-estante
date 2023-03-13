@@ -1,5 +1,4 @@
 import CardPostsG from "components/CardPostsG";
-import CardPostsM from "components/CardPostsM";
 import Container from "components/Container";
 import Footer from "components/Footer";
 import Header from "components/Header";

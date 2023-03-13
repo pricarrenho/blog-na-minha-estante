@@ -1,14 +1,13 @@
-import Container from "components/Container";
-import Header from "components/Header";
 import { getPost } from "service/post/getPost";
 import { PostTemplateProps } from "./types";
+import useSWR from "swr";
+import Container from "components/Container";
+import Header from "components/Header";
 import CardAuthor from "components/CardAuthor";
 import Footer from "components/Footer";
-
-import useSWR from "swr";
-import * as S from "./styles";
 import CardPostsP from "components/CardPostsP";
 import Title from "components/Title";
+import * as S from "./styles";
 
 export function PostTemplate({ post }: PostTemplateProps) {
   const { data } = useSWR(`/api/post/${post}`, () => getPost(post));

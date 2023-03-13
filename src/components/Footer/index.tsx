@@ -3,19 +3,19 @@ import * as S from "./styles";
 
 function Footer() {
   return (
-    <S.Content>
+    <S.Wrapper>
       <Container>
-        <S.Wrapper>
-          <p>
+        <S.Content>
+          <S.ContentText>
             Na Minha Estante• Todos os direitos reservados • Desenvolvido com 💜
             por{" "}
             <b>
               <i>Priscilla Carrenho</i>
             </b>
-          </p>
-        </S.Wrapper>
+          </S.ContentText>
+        </S.Content>
       </Container>
-    </S.Content>
+    </S.Wrapper>
   );
 }
 

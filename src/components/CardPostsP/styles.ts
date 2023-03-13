@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
@@ -47,12 +46,6 @@ export const Card = styled.div`
   ${({ theme }) => css`
     transition: 0.2s;
 
-    h3 {
-      color: ${theme.colors.fuchsia[900]};
-      font-size: ${theme.font.sizes.md};
-      text-align: center;
-    }
-
     &:hover {
       opacity: 0.8;
     }
@@ -63,4 +56,12 @@ export const PhotoBook = styled(Image)`
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.2);
+`;
+
+export const SubTitle = styled.h3`
+  ${({ theme }) => css`
+    color: ${theme.colors.fuchsia[900]};
+    font-size: ${theme.font.sizes.md};
+    text-align: center;
+  `}
 `;

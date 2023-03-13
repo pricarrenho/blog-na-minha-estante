@@ -16,6 +16,7 @@ export const Card = styled.div`
     flex-direction: column;
     border-radius: 8px;
     box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
 
     &:hover {
       opacity: 0.8;

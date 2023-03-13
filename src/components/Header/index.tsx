@@ -10,9 +10,9 @@ function Header() {
   const { data } = useSWR("/api/categories", getCategories);
 
   return (
-    <S.Content>
+    <S.Wrapper>
       <Container>
-        <S.Wrapper>
+        <S.Content>
           <Link href={"/"}>
             <Image
               src={logo}
@@ -28,9 +28,9 @@ function Header() {
               </li>
             ))}
           </S.MenuContent>
-        </S.Wrapper>
+        </S.Content>
       </Container>
-    </S.Content>
+    </S.Wrapper>
   );
 }
 

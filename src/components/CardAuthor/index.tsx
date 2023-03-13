@@ -3,20 +3,22 @@ import * as S from "./styles";
 
 function CardAuthor() {
   return (
-    <S.Perfil>
+    <S.Wrapper>
       <S.AuthorImg
         src={photoPerfil}
         alt="Foto do autor"
         width={150}
         height={150}
       />
-      <h2>Priscilla Carrenho</h2>
-      <p>
+
+      <S.Title>Priscilla Carrenho</S.Title>
+
+      <S.ContentText>
         Criadora e editora do Na Minha Estante. Graduanda em Análise e
         Desenvolvimento de Sistemas, porém apaixonada por livros desde que se
         lembra por gente.
-      </p>
-    </S.Perfil>
+      </S.ContentText>
+    </S.Wrapper>
   );
 }
 

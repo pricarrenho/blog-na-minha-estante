@@ -14,11 +14,16 @@ export const Card = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
+    transition: 0.2s;
 
     &:hover {
       opacity: 0.8;
     }
   `}
+`;
+
+export const LinkPost = styled(Link)`
+  ${({ theme }) => css``}
 `;
 
 export const PhotoBook = styled(Image)`
@@ -29,9 +34,5 @@ export const PhotoBook = styled(Image)`
 `;
 
 export const Subtitle = styled.h2`
-  ${({ theme }) => css``}
-`;
-
-export const LinkPost = styled(Link)`
   ${({ theme }) => css``}
 `;
