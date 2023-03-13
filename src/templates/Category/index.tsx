@@ -5,6 +5,7 @@ import Container from "components/Container";
 import * as S from "./styles";
 import CardPostsM from "components/CardPostsM";
 import Footer from "components/Footer";
+import Title from "components/Title";
 
 export function CategoryTemplate({ category }: CategoryProps) {
   const route = useRouter();
@@ -13,6 +14,7 @@ export function CategoryTemplate({ category }: CategoryProps) {
     <main>
       <Header />
       <Container>
+        <Title>Últimas Resenhas</Title>
         <CardPostsM />
       </Container>
       <Footer />

@@ -31,9 +31,7 @@ export const Content = styled.div`
     display: grid;
 
     h1 {
-      color: ${theme.colors.fuchsia[900]};
       margin-top: -56px;
-      margin-bottom: 24px;
     }
 
     blockquote {

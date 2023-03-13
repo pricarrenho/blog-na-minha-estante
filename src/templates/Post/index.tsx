@@ -8,6 +8,7 @@ import Footer from "components/Footer";
 import useSWR from "swr";
 import * as S from "./styles";
 import CardPostsP from "components/CardPostsP";
+import Title from "components/Title";
 
 export function PostTemplate({ post }: PostTemplateProps) {
   const { data } = useSWR(`/api/post/${post}`, () => getPost(post));
@@ -28,7 +29,7 @@ export function PostTemplate({ post }: PostTemplateProps) {
               />
 
               <S.Content>
-                <h1>{data.title}</h1>
+                <Title>{data.title}</Title>
                 {data && (
                   <S.PhotoBookLeft
                     src={data.bannerImage.url}
