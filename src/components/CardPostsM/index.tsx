@@ -10,22 +10,15 @@ function CardPostsM() {
     <S.Wrapper>
       {data?.map((post) => (
         <S.Card key={post.title}>
-          <S.PhotoBook
-            src={post.bannerImage.url}
-            alt=""
-            width={380}
-            height={184}
-          />
-
-          <S.Content>
+          <S.LinkPost href={`/${post.category?.slug}/${post.slug}`}>
+            <S.PhotoBook
+              src={post.bannerImage.url}
+              alt=""
+              width={400}
+              height={300}
+            />
             <S.Subtitle>{post.title}</S.Subtitle>
-
-            <S.Description>{post.description}</S.Description>
-
-            <S.LinkPost href={`/${post.category?.slug}/${post.slug}`}>
-              Continuar lendo
-            </S.LinkPost>
-          </S.Content>
+          </S.LinkPost>
         </S.Card>
       ))}
     </S.Wrapper>

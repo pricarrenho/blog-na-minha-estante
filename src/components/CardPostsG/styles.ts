@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
@@ -12,11 +11,15 @@ export const Wrapper = styled.div`
 
 export const Card = styled.div`
   ${({ theme }) => css`
+    background: ${theme.colors.fuchsia[50]};
     display: flex;
     flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.2);
 
     &:hover {
       opacity: 0.8;
+      background: ${theme.colors.fuchsia[100]};
     }
   `}
 `;
@@ -24,14 +27,22 @@ export const Card = styled.div`
 export const PhotoBook = styled(Image)`
   object-fit: cover;
   object-position: top center;
-  border-radius: 4px;
+  border-radius: 8px 8px 0px 0px;
   max-width: 100%;
 `;
 
-export const Subtitle = styled.h2`
-  ${({ theme }) => css``}
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 16px 24px;
 `;
 
-export const LinkPost = styled(Link)`
-  ${({ theme }) => css``}
+export const Subtitle = styled.h2``;
+
+export const Description = styled.p`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.sm};
+    line-height: 24px;
+  `}
 `;
