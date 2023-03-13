@@ -22,7 +22,7 @@ function CardPostsP({ title }: any) {
                   height={200}
                 />
 
-                <h3>{post.title}</h3>
+                <S.SubTitle>{post.title}</S.SubTitle>
               </Link>
             </S.Card>
           ))

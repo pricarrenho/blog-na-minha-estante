@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { getPosts } from "service/post/getPosts";
 import useSWR from "swr";
 import * as S from "./styles";

@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const Content = styled.div`
+export const Wrapper = styled.div`
   ${({ theme }) => css`
     background-color: ${theme.colors.fuchsia[200]};
     box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
@@ -8,7 +8,7 @@ export const Content = styled.div`
   `}
 `;
 
-export const Wrapper = styled.div`
+export const Content = styled.div`
   ${() => css`
     display: flex;
     justify-content: space-between;

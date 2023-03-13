@@ -40,10 +40,10 @@ export const Content = styled.div`
   `}
 `;
 
+export const PhotoBookLeft = styled(Image)``;
+
 export const LeftContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
 `;
-
-export const PhotoBookLeft = styled(Image)``;
