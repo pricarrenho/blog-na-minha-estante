@@ -24,7 +24,9 @@ function Header() {
           <S.MenuContent>
             {data?.map((category: any) => (
               <li key={category.name}>
-                <Link href={`/${category.slug}`}>{category.name}</Link>
+                <S.CategoriesLink href={`/${category.slug}`}>
+                  {category.name}
+                </S.CategoriesLink>
               </li>
             ))}
           </S.MenuContent>

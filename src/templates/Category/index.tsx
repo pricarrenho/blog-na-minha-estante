@@ -14,7 +14,7 @@ export function CategoryTemplate({ category }: CategoryProps) {
     <main>
       <Header />
       <Container>
-        <Title>Últimas Resenhas</Title>
+        <Title>Últimas Postagens</Title>
         <CardPostsM />
       </Container>
       <Footer />

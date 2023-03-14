@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
   ${({ theme }) => css`
     padding: 16px 0px;
-    margin-top: 64px;
+    margin-top: 80px;
   `}
 `;
 

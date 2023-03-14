@@ -4,13 +4,15 @@ import Footer from "components/Footer";
 import Header from "components/Header";
 import SimpleSlider from "components/SimpleSlider";
 import Title from "components/Title";
-import * as S from "./styles";
+import TitleHome from "components/TitleHome";
 
 export function HomeTemplate() {
   return (
     <main>
       <Header />
       <Container>
+        <TitleHome />
+
         <SimpleSlider />
 
         <Title>Contos</Title>

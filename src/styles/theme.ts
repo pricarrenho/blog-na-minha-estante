@@ -34,6 +34,7 @@ const font = {
     md: "1.6rem",
     lg: "2.4rem",
     xl: "3.2rem",
+    xxl: "6.4rem",
   },
 };
 

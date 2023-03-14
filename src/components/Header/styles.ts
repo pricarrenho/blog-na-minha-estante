@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
@@ -22,5 +23,15 @@ export const MenuContent = styled.div`
     display: flex;
     gap: 24px;
     padding: 16px 0px;
+  `}
+`;
+
+export const CategoriesLink = styled(Link)`
+  ${({ theme }) => css`
+    color: ${theme.colors.neutral[900]};
+
+    &:hover {
+      color: ${theme.colors.fuchsia[900]};
+    }
   `}
 `;

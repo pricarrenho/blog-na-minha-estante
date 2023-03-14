@@ -17,7 +17,12 @@ export const Card = styled.div`
     transition: 0.2s;
 
     &:hover {
-      opacity: 0.8;
+      img {
+        filter: brightness(0.9);
+      }
+      h2 {
+        color: ${theme.colors.fuchsia[900]};
+      }
     }
   `}
 `;
@@ -31,8 +36,12 @@ export const PhotoBook = styled(Image)`
   object-position: top center;
   border-radius: 4px;
   max-width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 `;
 
 export const Subtitle = styled.h2`
-  ${({ theme }) => css``}
+  ${({ theme }) =>
+    css`
+      color: ${theme.colors.neutral[700]};
+    `}
 `;

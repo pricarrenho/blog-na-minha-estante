@@ -38,12 +38,7 @@ export const GlobalStyle = createGlobalStyle`
     a {
       text-decoration: none;
       font-size: ${theme.font.sizes.md};
-      color: ${theme.colors.neutral[700]};
       font-weight: 600;
-
-      &:hover {
-        color: ${theme.colors.neutral[500]};
-      }
     }
 
     li {
