@@ -1,5 +1,6 @@
-import Slider from "react-slick";
 import { getPosts } from "service/post/getPosts";
+import Link from "next/link";
+import Slider from "react-slick";
 import useSWR from "swr";
 import * as S from "./styles";
 
@@ -14,19 +15,30 @@ function SimpleSlider() {
     slidesToScroll: 1,
   };
   return (
-    <Slider {...settings}>
-      {data
-        ?.map((post) => (
-          <S.Photo
-            src={post.bannerImage.url}
-            alt=""
-            key={post.title}
-            width={400}
-            height={500}
-          />
-        ))
-        .slice(0, 3)}
-    </Slider>
+    <S.Wrapper>
+      <Slider {...settings}>
+        {data
+          ?.map((post) => (
+            <S.SliderItem key={post.title}>
+              <Link href={`/${post.category?.slug}/${post.slug}`}>
+                <S.PhotoBook
+                  src={post.bannerImage.url}
+                  alt=""
+                  width={300}
+                  height={500}
+                />
+
+                <S.TextWrapper>
+                  <S.Subtitle>{post.title}</S.Subtitle>
+
+                  <S.Description>{post.description}</S.Description>
+                </S.TextWrapper>
+              </Link>
+            </S.SliderItem>
+          ))
+          .slice(0, 3)}
+      </Slider>
+    </S.Wrapper>
   );
 }
 

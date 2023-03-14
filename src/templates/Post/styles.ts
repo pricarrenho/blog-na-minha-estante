@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 export const CardPost = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.fuchsia[50]};
-    box-shadow: 0 0 16px 2px ${theme.colors.boxShadow};
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     border-radius: 8px;
     margin-bottom: 48px;
   `}
@@ -30,10 +30,6 @@ export const Content = styled.div`
     padding: 0px 48px 40px;
     display: grid;
 
-    h1 {
-      margin-top: -56px;
-    }
-
     blockquote {
       margin-top: 64px;
     }
@@ -46,4 +42,13 @@ export const LeftContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+`;
+
+export const Title = styled.h1`
+  ${({ theme }) => css`
+    color: ${theme.colors.fuchsia[900]};
+    margin-top: 56px;
+    margin-bottom: 24px;
+    margin-top: -56px;
+  `}
 `;

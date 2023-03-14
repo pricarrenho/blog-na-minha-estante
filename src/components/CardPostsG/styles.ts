@@ -15,12 +15,15 @@ export const Card = styled.div`
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.2);
-    transition: 0.2s;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 
     &:hover {
-      opacity: 0.8;
-      background: ${theme.colors.fuchsia[100]};
+      img {
+        filter: brightness(0.9);
+      }
+      h3 {
+        color: ${theme.colors.fuchsia[900]};
+      }
     }
   `}
 `;
@@ -30,16 +33,24 @@ export const PhotoBook = styled(Image)`
   object-position: top center;
   border-radius: 8px 8px 0px 0px;
   max-width: 100%;
+  transition: 0.2s;
 `;
 
 export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 16px 24px;
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 16px 24px;
+  `}
 `;
 
-export const Subtitle = styled.h2``;
+export const Subtitle = styled.h3`
+  ${({ theme }) => css`
+    color: ${theme.colors.neutral[700]};
+    transition: 0.2s;
+  `}
+`;
 
 export const Description = styled.p`
   ${({ theme }) => css`

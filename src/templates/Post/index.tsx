@@ -28,7 +28,7 @@ export function PostTemplate({ post }: PostTemplateProps) {
               />
 
               <S.Content>
-                <Title>{data.title}</Title>
+                <S.Title>{data.title}</S.Title>
                 {data && (
                   <S.PhotoBookLeft
                     src={data.bannerImage.url}
