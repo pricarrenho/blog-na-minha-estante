@@ -11,6 +11,12 @@ export const Title = styled.h2`
     position: relative;
     font-size: ${theme.font.sizes.lg};
 
+    @media (max-width: 800px) {
+      margin-left: 16px;
+      margin-top: 40px;
+      margin-bottom: 24px;
+    }
+
     &::before {
       content: "";
       position: absolute;

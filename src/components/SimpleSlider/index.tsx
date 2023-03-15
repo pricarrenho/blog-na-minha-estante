@@ -1,12 +1,8 @@
-import { getPosts } from "service/post/getPosts";
 import Link from "next/link";
 import Slider from "react-slick";
-import useSWR from "swr";
 import * as S from "./styles";
 
-function SimpleSlider() {
-  const { data } = useSWR("/api/posts", getPosts);
-
+function SimpleSlider({ item }: any) {
   const settings = {
     dots: true,
     infinite: true,
@@ -14,11 +10,12 @@ function SimpleSlider() {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
   return (
     <S.Wrapper>
       <Slider {...settings}>
-        {data
-          ?.map((post) => (
+        {item
+          ?.map((post: any) => (
             <S.SliderItem key={post.title}>
               <Link href={`/${post.category?.slug}/${post.slug}`}>
                 <S.PhotoBook

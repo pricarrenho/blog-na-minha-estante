@@ -21,7 +21,7 @@ export const GET_POST = gql`
 
 export const GET_POSTS = gql`
   query getPosts {
-    posts {
+    posts(orderBy: createdAt_DESC) {
       slug
       title
       category {
@@ -45,6 +45,10 @@ export const GET_POSTS_BY_CATEGORY = gql`
         name
         slug
       }
+      bannerImage {
+        url
+      }
+      description
     }
   }
 `;

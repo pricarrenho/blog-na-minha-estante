@@ -4,7 +4,21 @@ import styled, { css } from "styled-components";
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     text-align: center;
-    padding: 0px 24px;
+    position: relative;
+
+    @media (max-width: 800px) {
+      margin-top: 40px;
+
+      &::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        top: -40px;
+        width: 80%;
+        left: 10%;
+        background: ${theme.colors.neutral[300]};
+      }
+    }
   `}
 `;
 
@@ -25,5 +39,6 @@ export const ContentText = styled.p`
     text-align: center;
     font-size: ${theme.font.sizes.sm};
     line-height: 24px;
+    padding: 0px 24px;
   `}
 `;

@@ -30,6 +30,7 @@ const colors = {
 
 const font = {
   sizes: {
+    ssm: "1rem",
     sm: "1.4rem",
     md: "1.6rem",
     lg: "2.4rem",
