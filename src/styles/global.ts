@@ -54,6 +54,10 @@ export const GlobalStyle = createGlobalStyle`
       font-size: ${theme.font.sizes.md};
       line-height: 32px;
       text-align: justify;
+
+      @media (max-width: 800px) {
+        line-height: 24px;
+      }
     }
 
     blockquote {
@@ -61,9 +65,6 @@ export const GlobalStyle = createGlobalStyle`
       background: ${theme.colors.fuchsia[100]};
       font-size: ${theme.font.sizes.md};
       font-weight: 500;
-      padding: 24px;
-      border-radius: 8px;
-      text-align: center;
     }
 
     button {

@@ -13,11 +13,11 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n  query getCategory($category: String) {\n    category(where: { slug: $category }) {\n      name\n      subcategories {\n        name\n      }\n      post {\n        slug\n        title\n      }\n    }\n  }\n": types.GetCategoryDocument,
+    "\n  query getCategory($category: String) {\n    category(where: { slug: $category }) {\n      name\n      slug\n      subcategories {\n        name\n      }\n      post {\n        slug\n        title\n      }\n    }\n  }\n": types.GetCategoryDocument,
     "\n  query getCategories {\n    categories {\n      id\n      name\n      slug\n    }\n  }\n": types.GetCategoriesDocument,
     "\n  query getPost($post: String) {\n    post(where: { slug: $post }) {\n      title\n      slug\n      category {\n        name\n        slug\n      }\n      content {\n        html\n      }\n      bannerImage {\n        url\n      }\n    }\n  }\n": types.GetPostDocument,
-    "\n  query getPosts {\n    posts {\n      slug\n      title\n      category {\n        name\n        slug\n      }\n      bannerImage {\n        url\n      }\n      description\n    }\n  }\n": types.GetPostsDocument,
-    "\n  query getPostsByCategory($category: String) {\n    posts(where: { category: { slug: $category } }) {\n      slug\n      title\n      category {\n        name\n        slug\n      }\n    }\n  }\n": types.GetPostsByCategoryDocument,
+    "\n  query getPosts {\n    posts(orderBy: createdAt_DESC) {\n      slug\n      title\n      category {\n        name\n        slug\n      }\n      bannerImage {\n        url\n      }\n      description\n    }\n  }\n": types.GetPostsDocument,
+    "\n  query getPostsByCategory($category: String) {\n    posts(where: { category: { slug: $category } }) {\n      slug\n      title\n      category {\n        name\n        slug\n      }\n      bannerImage {\n        url\n      }\n      description\n    }\n  }\n": types.GetPostsByCategoryDocument,
     "\n  query getSubcategories {\n    subcategories {\n      name\n      category {\n        name\n        slug\n      }\n      posts {\n        title\n      }\n    }\n  }\n": types.GetSubcategoriesDocument,
 };
 
@@ -38,7 +38,7 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query getCategory($category: String) {\n    category(where: { slug: $category }) {\n      name\n      subcategories {\n        name\n      }\n      post {\n        slug\n        title\n      }\n    }\n  }\n"): (typeof documents)["\n  query getCategory($category: String) {\n    category(where: { slug: $category }) {\n      name\n      subcategories {\n        name\n      }\n      post {\n        slug\n        title\n      }\n    }\n  }\n"];
+export function graphql(source: "\n  query getCategory($category: String) {\n    category(where: { slug: $category }) {\n      name\n      slug\n      subcategories {\n        name\n      }\n      post {\n        slug\n        title\n      }\n    }\n  }\n"): (typeof documents)["\n  query getCategory($category: String) {\n    category(where: { slug: $category }) {\n      name\n      slug\n      subcategories {\n        name\n      }\n      post {\n        slug\n        title\n      }\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -50,11 +50,11 @@ export function graphql(source: "\n  query getPost($post: String) {\n    post(wh
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query getPosts {\n    posts {\n      slug\n      title\n      category {\n        name\n        slug\n      }\n      bannerImage {\n        url\n      }\n      description\n    }\n  }\n"): (typeof documents)["\n  query getPosts {\n    posts {\n      slug\n      title\n      category {\n        name\n        slug\n      }\n      bannerImage {\n        url\n      }\n      description\n    }\n  }\n"];
+export function graphql(source: "\n  query getPosts {\n    posts(orderBy: createdAt_DESC) {\n      slug\n      title\n      category {\n        name\n        slug\n      }\n      bannerImage {\n        url\n      }\n      description\n    }\n  }\n"): (typeof documents)["\n  query getPosts {\n    posts(orderBy: createdAt_DESC) {\n      slug\n      title\n      category {\n        name\n        slug\n      }\n      bannerImage {\n        url\n      }\n      description\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query getPostsByCategory($category: String) {\n    posts(where: { category: { slug: $category } }) {\n      slug\n      title\n      category {\n        name\n        slug\n      }\n    }\n  }\n"): (typeof documents)["\n  query getPostsByCategory($category: String) {\n    posts(where: { category: { slug: $category } }) {\n      slug\n      title\n      category {\n        name\n        slug\n      }\n    }\n  }\n"];
+export function graphql(source: "\n  query getPostsByCategory($category: String) {\n    posts(where: { category: { slug: $category } }) {\n      slug\n      title\n      category {\n        name\n        slug\n      }\n      bannerImage {\n        url\n      }\n      description\n    }\n  }\n"): (typeof documents)["\n  query getPostsByCategory($category: String) {\n    posts(where: { category: { slug: $category } }) {\n      slug\n      title\n      category {\n        name\n        slug\n      }\n      bannerImage {\n        url\n      }\n      description\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

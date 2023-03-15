@@ -23,8 +23,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const category = await getCategory(categorySlug);
 
+  const currentCategory = `/api/post/${categorySlug}`;
+
   return {
     props: {
+      fallback: {
+        [currentCategory]: category,
+      },
       category,
     },
   };

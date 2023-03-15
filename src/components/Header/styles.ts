@@ -6,6 +6,10 @@ export const Wrapper = styled.div`
     background-color: ${theme.colors.fuchsia[200]};
     box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
     margin-bottom: 48px;
+
+    @media (max-width: 800px) {
+      margin-bottom: 0px;
+    }
   `}
 `;
 

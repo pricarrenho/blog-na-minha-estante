@@ -1,18 +1,14 @@
-import { getPosts } from "service/post/getPosts";
-import useSWR from "swr";
 import * as S from "./styles";
 
-function CardPostsM() {
-  const { data } = useSWR("/api/posts", getPosts);
-
+function CardPostsCategories({ items }: any) {
   return (
     <S.Wrapper>
-      {data?.map((post) => (
+      {items?.map((post: any) => (
         <S.Card key={post.title}>
           <S.LinkPost href={`/${post.category?.slug}/${post.slug}`}>
             <S.PhotoBook
               src={post.bannerImage.url}
-              alt=""
+              alt={post.title}
               width={400}
               height={300}
             />
@@ -24,4 +20,4 @@ function CardPostsM() {
   );
 }
 
-export default CardPostsM;
+export default CardPostsCategories;

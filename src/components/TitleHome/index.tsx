@@ -1,4 +1,3 @@
-import { TitleProps } from "./types";
 import * as S from "./styles";
 
 const TitleHome = () => {

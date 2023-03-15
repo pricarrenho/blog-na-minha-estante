@@ -4,6 +4,7 @@ export const GET_CATEGORY = gql`
   query getCategory($category: String) {
     category(where: { slug: $category }) {
       name
+      slug
       subcategories {
         name
       }

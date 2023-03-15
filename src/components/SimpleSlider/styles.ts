@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
       }
 
       ${PhotoBook} {
-        filter: brightness(0.9);
+        filter: brightness(1.1);
       }
     }
 
@@ -58,6 +58,7 @@ export const SliderItem = styled.div`
 
 export const PhotoBook = styled(Image)`
   object-fit: cover;
+  object-position: top center;
   width: 100%;
   transition: 0.2s;
 `;

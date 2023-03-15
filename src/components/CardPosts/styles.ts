@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
-    max-width: 800px;
     margin-top: 48px;
   `}
 `;
@@ -30,6 +29,16 @@ export const Title = styled.h2`
       left: 0;
       background: ${theme.colors.neutral[300]};
     }
+
+    @media (max-width: 800px) {
+      margin-top: 24px;
+      margin-bottom: 16px;
+
+      &::after {
+        width: 80%;
+        left: 10%;
+      }
+    }
   `}
 `;
 
@@ -39,6 +48,10 @@ export const ContentCard = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     justify-items: center;
+
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+    }
   `}
 `;
 
@@ -48,7 +61,7 @@ export const Card = styled.div`
 
     &:hover {
       img {
-        filter: brightness(0.9);
+        filter: brightness(1.2);
       }
       h3 {
         color: ${theme.colors.fuchsia[900]};

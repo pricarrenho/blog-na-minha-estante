@@ -5,8 +5,7 @@ import Container from "components/Container";
 import Header from "components/Header";
 import CardAuthor from "components/CardAuthor";
 import Footer from "components/Footer";
-import CardPostsP from "components/CardPostsP";
-import Title from "components/Title";
+import CardPosts from "components/CardPosts";
 import * as S from "./styles";
 
 export function PostTemplate({ post }: PostTemplateProps) {
@@ -15,9 +14,8 @@ export function PostTemplate({ post }: PostTemplateProps) {
   return (
     <>
       <Header />
-
       <Container>
-        <S.Wrapper>
+        <S.WrapperContent>
           {data && (
             <S.CardPost>
               <S.PhotoBook
@@ -29,27 +27,28 @@ export function PostTemplate({ post }: PostTemplateProps) {
 
               <S.Content>
                 <S.Title>{data.title}</S.Title>
+
                 {data && (
-                  <S.PhotoBookLeft
+                  <S.PhotoBookInside
                     src={data.bannerImage.url}
                     alt="Foto do livro"
                     width={700}
                     height={500}
                   />
                 )}
+
                 <main dangerouslySetInnerHTML={{ __html: data.content.html }} />
               </S.Content>
             </S.CardPost>
           )}
 
-          <S.LeftContent>
+          <S.CardAuthorContent>
             <CardAuthor />
-          </S.LeftContent>
-        </S.Wrapper>
+          </S.CardAuthorContent>
 
-        <CardPostsP title />
+          <CardPosts title />
+        </S.WrapperContent>
       </Container>
-
       <Footer />
     </>
   );
