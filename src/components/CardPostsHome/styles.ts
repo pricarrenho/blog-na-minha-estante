@@ -6,6 +6,12 @@ export const Wrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 48px;
+
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 0px 32px;
+    }
   `}
 `;
 
@@ -19,7 +25,7 @@ export const Card = styled.div`
 
     &:hover {
       img {
-        filter: brightness(0.9);
+        filter: brightness(1.2);
       }
       h3 {
         color: ${theme.colors.fuchsia[900]};

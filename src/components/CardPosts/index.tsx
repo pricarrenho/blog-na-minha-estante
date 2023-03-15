@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { getPosts } from "service/post/getPosts";
 import useSWR from "swr";
+import Link from "next/link";
 import * as S from "./styles";
 
 function CardPostsP({ title }: any) {
