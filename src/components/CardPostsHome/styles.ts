@@ -4,13 +4,13 @@ import styled, { css } from "styled-components";
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
 
-    @media (max-width: 800px) {
-      grid-template-columns: 1fr;
-      gap: 32px;
-      padding: 0px 32px;
+    @media (min-width: 800px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
     }
   `}
 `;

@@ -5,9 +5,7 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     text-align: center;
     position: relative;
-
-    @media (max-width: 800px) {
-      margin-top: 40px;
+    margin-top: 40px;
 
       &::after {
         position: absolute;
@@ -19,6 +17,14 @@ export const Wrapper = styled.div`
         background: ${theme.colors.neutral[300]};
       }
     }
+
+    @media (min-width: 800px) {
+      margin-top: 0px;
+
+      &::after {
+      display: none;
+      }
+    
   `}
 `;
 

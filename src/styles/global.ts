@@ -52,11 +52,11 @@ export const GlobalStyle = createGlobalStyle`
     p {
       color: ${theme.colors.neutral[500]};
       font-size: ${theme.font.sizes.md};
-      line-height: 32px;
+      line-height: 24px;
       text-align: justify;
 
-      @media (max-width: 800px) {
-        line-height: 24px;
+      @media (min-width: 800px) {
+        line-height: 32px;
       }
     }
 

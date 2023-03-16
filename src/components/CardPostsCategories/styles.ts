@@ -5,13 +5,12 @@ import styled, { css } from "styled-components";
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
+    grid-template-columns: 1fr;
+    gap: 32px;
 
-    @media (max-width: 800px) {
-      grid-template-columns: 1fr;
-      gap: 32px;
-      padding: 0px 32px;
+    @media (min-width: 800px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
     }
   `}
 `;
@@ -43,6 +42,11 @@ export const PhotoBook = styled(Image)`
   border-radius: 4px;
   max-width: 100%;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  height: 200px;
+
+  @media (min-width: 800px) {
+    height: 300px;
+  }
 `;
 
 export const Subtitle = styled.h2`

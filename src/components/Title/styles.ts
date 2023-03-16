@@ -4,17 +4,16 @@ export const Title = styled.h2`
   ${({ theme }) => css`
     display: inline-block;
     color: ${theme.colors.fuchsia[900]};
-    margin-top: 80px;
-    margin-bottom: 48px;
+    margin-top: 40px;
+    margin-bottom: 24px;
     border: 3px solid ${theme.colors.fuchsia[900]};
     padding: 4px 16px;
     position: relative;
     font-size: ${theme.font.sizes.lg};
 
-    @media (max-width: 800px) {
-      margin-left: 16px;
-      margin-top: 40px;
-      margin-bottom: 24px;
+    @media (min-width: 800px) {
+      margin-top: 80px;
+      margin-bottom: 48px;
     }
 
     &::before {
