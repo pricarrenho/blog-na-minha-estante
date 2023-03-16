@@ -16,27 +16,28 @@ export const Title = styled.h2`
     text-align: center;
     text-transform: uppercase;
     font-weight: 200;
-    margin-top: 48px;
-    margin-bottom: 40px;
+    margin-top: 32px;
+    margin-bottom: 16px;
     position: relative;
 
     &::after {
       position: absolute;
       content: "";
-      width: 100%;
       height: 1px;
+      width: 80%;
+      left: 10%;
       bottom: 50px;
-      left: 0;
+
       background: ${theme.colors.neutral[300]};
     }
 
-    @media (max-width: 800px) {
-      margin-top: 24px;
-      margin-bottom: 16px;
+    @media (min-width: 800px) {
+      margin-top: 48px;
+      margin-bottom: 40px;
 
       &::after {
-        width: 80%;
-        left: 10%;
+        width: 100%;
+        left: 0;
       }
     }
   `}
@@ -45,12 +46,12 @@ export const Title = styled.h2`
 export const ContentCard = styled.div`
   ${({ theme }) => css`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 24px;
     justify-items: center;
 
-    @media (max-width: 800px) {
-      grid-template-columns: 1fr;
+    @media (min-width: 800px) {
+      grid-template-columns: repeat(3, 1fr);
     }
   `}
 `;

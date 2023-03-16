@@ -1,14 +1,17 @@
 import Link from "next/link";
-import Slider from "react-slick";
+import Slider, { Settings } from "react-slick";
 import * as S from "./styles";
 
 function SimpleSlider({ item }: any) {
-  const settings = {
+  const settings: Settings = {
+    arrows: false,
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000, //5 seconds
   };
 
   return (

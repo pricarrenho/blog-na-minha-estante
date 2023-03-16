@@ -10,33 +10,34 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     font-family: ${gloria.style.fontFamily}, sans-serif;
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 48px;
+    margin-top: 24px;
 
-    @media (max-width: 800px) {
-      margin-bottom: 40px;
+    @media (min-width: 800px) {
+      margin-bottom: 80px;
     }
   `}
 `;
 
 export const Title = styled.h1`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.xxl};
+    font-size: ${theme.font.sizes.xl};
     color: ${theme.colors.fuchsia[800]};
 
-    @media (max-width: 800px) {
-      font-size: ${theme.font.sizes.xl};
+    @media (min-width: 800px) {
+      font-size: ${theme.font.sizes.xxl};
     }
   `}
 `;
 
 export const Subtitle = styled.h2`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.lg};
+    font-size: ${theme.font.sizes.md};
     color: ${theme.colors.neutral[700]};
     line-height: 4px;
 
-    @media (max-width: 800px) {
-      font-size: ${theme.font.sizes.md};
+    @media (min-width: 800px) {
+      font-size: ${theme.font.sizes.lg};
     }
   `}
 `;

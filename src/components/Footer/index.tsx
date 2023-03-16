@@ -9,9 +9,9 @@ function Footer() {
           <S.ContentText>
             Na Minha Estante• Todos os direitos reservados • Desenvolvido com 💜
             por{" "}
-            <b>
-              <i>Priscilla Carrenho</i>
-            </b>
+            <span>
+              <b>Priscilla Carrenho</b>
+            </span>
           </S.ContentText>
         </S.Content>
       </Container>

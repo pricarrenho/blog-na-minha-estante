@@ -4,11 +4,11 @@ import styled, { css } from "styled-components";
 export const WrapperContent = styled.div`
   ${({ theme }) => css`
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 24px;
 
-    @media (max-width: 800px) {
-      grid-template-columns: 1fr;
+    @media (min-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
     }
   `}
 `;
@@ -19,10 +19,6 @@ export const CardPost = styled.div`
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     border-radius: 8px;
     margin-bottom: 48px;
-
-    @media (max-width: 800px) {
-      box-shadow: none;
-    }
   `}
 `;
 
@@ -32,30 +28,22 @@ export const PhotoBook = styled(Image)`
   mask-image: linear-gradient(to top, transparent 10%, white 75%);
   opacity: 0.5;
   width: 100%;
-
-  @media (max-width: 800px) {
-    border-radius: 0px;
-  }
 `;
 
 export const Content = styled.div`
   ${({ theme }) => css`
-    padding: 0px 48px 40px;
+    padding: 0px 24px;
     display: grid;
 
     blockquote {
-      margin-top: 64px;
+      margin: 64px 16px;
       padding: 24px;
       border-radius: 8px;
       text-align: center;
     }
 
-    @media (max-width: 800px) {
-      padding: 0px 32px;
-
-      blockquote {
-        margin: 24px;
-      }
+    @media (min-width: 800px) {
+      padding: 0px 48px 40px;
     }
   `}
 `;
@@ -66,19 +54,16 @@ export const Title = styled.h1`
     margin-top: 56px;
     margin-bottom: 24px;
     margin-top: -56px;
-
-    @media (max-width: 800px) {
-      margin-top: -80px;
-    }
   `}
 `;
 
 export const PhotoBookInside = styled(Image)`
   width: 100%;
   object-fit: cover;
+  height: 200px;
 
-  @media (max-width: 800px) {
-    max-height: 250px;
+  @media (min-width: 800px) {
+    height: 500px;
   }
 `;
 
