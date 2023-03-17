@@ -47,6 +47,7 @@ export const MenuContent = styled.div<MenuContentProps>`
     width: 100vw;
     background-color: ${theme.colors.fuchsia[200]};
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 
     ${show && MenuContentModifier.show}
 
