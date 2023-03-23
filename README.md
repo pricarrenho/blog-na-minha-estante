@@ -54,7 +54,7 @@ $ yarn start
 
 ## 💻 Project
 
-[My Trips](https://blog-na-minha-estante.pricarrenho.com.br) was developed to validate knowledge in NextJS.
+[Blog na Minha Estante](https://blog-na-minha-estante.pricarrenho.com.br) was developed to validate knowledge in NextJS.
 
 ---
 
