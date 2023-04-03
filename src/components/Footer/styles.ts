@@ -30,6 +30,10 @@ export const ContentText = styled.p`
       color: ${theme.colors.black};
     }
 
+    a {
+      font-size: ${theme.font.sizes.sm};
+    }
+
     @media (min-width: 800px) {
       font-size: ${theme.font.sizes.sm};
     }

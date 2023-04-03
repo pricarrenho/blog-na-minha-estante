@@ -1,5 +1,6 @@
 import Container from "components/Container";
 import * as S from "./styles";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -10,7 +11,9 @@ function Footer() {
             Na Minha Estante• Todos os direitos reservados • Desenvolvido com 💜
             por{" "}
             <span>
-              <b>Priscilla Carrenho</b>
+              <Link href={"https://pricarrenho.com.br"} target="_blank">
+                <b>Priscilla Carrenho</b>
+              </Link>
             </span>
           </S.ContentText>
         </S.Content>
