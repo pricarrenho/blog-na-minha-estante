@@ -26,10 +26,6 @@ export const ContentText = styled.p`
     line-height: 24px;
     padding: 0px 24px;
 
-    span {
-      color: ${theme.colors.black};
-    }
-
     a {
       font-size: ${theme.font.sizes.sm};
     }
