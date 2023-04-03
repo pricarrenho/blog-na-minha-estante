@@ -8,8 +8,8 @@ function Footer() {
       <Container>
         <S.Content>
           <S.ContentText>
-            Na Minha Estante• Todos os direitos reservados • Desenvolvido com 💜
-            por{" "}
+            Na Minha Estante • Todos os direitos reservados • Desenvolvido com
+            💜 por{" "}
             <span>
               <Link href={"https://pricarrenho.com.br"} target="_blank">
                 <b>Priscilla Carrenho</b>
