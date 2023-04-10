@@ -6,6 +6,7 @@ import Container from "components/Container";
 import CardPostsCategories from "components/CardPostsCategories";
 import Footer from "components/Footer";
 import Title from "components/Title";
+import * as S from "./styles";
 
 export function CategoryTemplate({ category }: CategoryProps) {
   const categorySlug = category?.slug as string;
@@ -18,8 +19,10 @@ export function CategoryTemplate({ category }: CategoryProps) {
     <main>
       <Header />
       <Container>
-        <Title>Últimas Postagens</Title>
-        <CardPostsCategories items={data} />
+        <S.Content>
+          <Title>Últimas Postagens</Title>
+          <CardPostsCategories items={data} />
+        </S.Content>
       </Container>
       <Footer />
     </main>
