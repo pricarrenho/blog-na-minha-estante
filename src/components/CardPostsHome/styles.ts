@@ -23,6 +23,10 @@ export const Card = styled.div`
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 
+    img {
+      transition: 0.4s;
+    }
+
     &:hover {
       img {
         filter: brightness(1.2);

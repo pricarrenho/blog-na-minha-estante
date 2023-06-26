@@ -58,7 +58,9 @@ export const ContentCard = styled.div`
 
 export const Card = styled.div`
   ${({ theme }) => css`
-    transition: 0.2s;
+    img {
+      transition: 0.4s;
+    }
 
     &:hover {
       img {

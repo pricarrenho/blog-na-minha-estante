@@ -19,7 +19,10 @@ export const Card = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-    transition: 0.2s;
+
+    img {
+      transition: 0.4s;
+    }
 
     &:hover {
       img {

@@ -10,7 +10,7 @@ export const TextWrapper = styled.div`
   background: rgba(0, 0, 0, 0.2);
   width: 60%;
   padding: 24px;
-  transition: 0.2s;
+  transition: 0.4s;
 
   @media (min-width: 800px) {
     left: 0;
@@ -87,7 +87,7 @@ export const PhotoBook = styled(Image)`
   object-fit: cover;
   object-position: top center;
   width: 100%;
-  transition: 0.2s;
+  transition: 0.4s;
   height: 200px;
 
   @media (min-width: 800px) {
