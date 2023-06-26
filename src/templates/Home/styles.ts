@@ -17,16 +17,16 @@ export const LinkCategory = styled(Link)`
       transition: 0.2s;
 
       ::before {
-        transition: 0.2s;
+        transition: color 0.2s, background-color 0.2s;
       }
     }
 
     h2:hover {
-      color: ${theme.colors.fuchsia[700]};
-      border-color: ${theme.colors.fuchsia[700]};
+      color: ${theme.colors.white};
+      background-color: ${theme.colors.fuchsia[900]};
 
       ::before {
-        border-color: ${theme.colors.fuchsia[700]};
+        background-color: ${theme.colors.fuchsia[900]};
       }
     }
   `}

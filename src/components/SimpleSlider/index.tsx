@@ -1,18 +1,9 @@
-import Link from "next/link";
-import Slider, { Settings } from "react-slick";
+import Slider from "react-slick";
+import { useSimpleSlider } from "./useSimpleSlider";
 import * as S from "./styles";
 
 function SimpleSlider({ item }: any) {
-  const settings: Settings = {
-    arrows: false,
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000, //5 seconds
-  };
+  const { settings, handleOnItemClick } = useSimpleSlider();
 
   return (
     <S.Wrapper>
@@ -20,10 +11,10 @@ function SimpleSlider({ item }: any) {
         {item
           ?.map((post: any) => (
             <S.SliderItem key={post.title}>
-              <Link href={`/${post.category?.slug}/${post.slug}`}>
+              <div onClick={() => handleOnItemClick(post)}>
                 <S.PhotoBook
                   src={post.bannerImage.url}
-                  alt=""
+                  alt={`Imagem banner do post ${post.title}`}
                   width={300}
                   height={500}
                 />
@@ -33,7 +24,7 @@ function SimpleSlider({ item }: any) {
 
                   <S.Description>{post.description}</S.Description>
                 </S.TextWrapper>
-              </Link>
+              </div>
             </S.SliderItem>
           ))
           .slice(0, 3)}
