@@ -8,10 +8,10 @@ const gloria = Gloria_Hallelujah({
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
-    font-family: ${gloria.style.fontFamily}, sans-serif;
     text-align: center;
     margin-bottom: 48px;
     margin-top: 24px;
+    font-family: ${gloria.style.fontFamily};
 
     @media (min-width: 800px) {
       margin-bottom: 80px;
