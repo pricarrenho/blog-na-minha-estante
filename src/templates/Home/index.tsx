@@ -29,19 +29,19 @@ export function HomeTemplate() {
       </S.CustomContainer>
 
       <Container>
-        <Link href="/contos">
+        <S.LinkCategory href="/contos">
           <Title>Contos</Title>
-        </Link>
+        </S.LinkCategory>
         <CardPostsHome item={contos} />
 
-        <Link href="/resenhas">
+        <S.LinkCategory href="/resenhas">
           <Title>Resenhas</Title>
-        </Link>
+        </S.LinkCategory>
         <CardPostsHome item={resenhas} />
 
-        <Link href="/autores">
+        <S.LinkCategory href="/autores">
           <Title>Autores</Title>
-        </Link>
+        </S.LinkCategory>
         <CardPostsHome item={autores} />
       </Container>
       <Footer />

@@ -28,6 +28,12 @@ export const ContentText = styled.p`
 
     a {
       font-size: ${theme.font.sizes.sm};
+      color: ${theme.colors.fuchsia[900]};
+      transition: 0.2s;
+    }
+
+    a:hover {
+      color: ${theme.colors.fuchsia[700]};
     }
 
     @media (min-width: 800px) {
