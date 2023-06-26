@@ -1,4 +1,4 @@
-export const Analytics = () => (
+const Analytics = () => (
   <>
     <script
       async
@@ -18,3 +18,5 @@ export const Analytics = () => (
     />
   </>
 );
+
+export default Analytics;
