@@ -4,6 +4,7 @@ import { Gloria_Hallelujah } from "@next/font/google";
 const gloria = Gloria_Hallelujah({
   weight: ["400"],
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const Wrapper = styled.div`
