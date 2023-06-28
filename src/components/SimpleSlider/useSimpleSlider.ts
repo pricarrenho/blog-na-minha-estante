@@ -27,8 +27,17 @@ export const useSimpleSlider = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: 4,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+    ],
     autoplay: true,
     autoplaySpeed: 5000, //5 seconds
     beforeChange: handleBeforeChange,

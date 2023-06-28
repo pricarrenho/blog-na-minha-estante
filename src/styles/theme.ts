@@ -42,7 +42,7 @@ const font = {
 export const themeWhite = {
   colors: {
     ...colors,
-    background: colors.fuchsia[50],
+    background: colors.white,
   },
   font,
 };

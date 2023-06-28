@@ -1,37 +1,22 @@
 import Image from "next/image";
 import styled, { css } from "styled-components";
 
-export const TextWrapper = styled.div`
-  position: absolute;
-  z-index: 1;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.2);
-  width: 60%;
-  padding: 24px;
-  transition: 0.4s;
-
-  @media (min-width: 800px) {
-    left: 0;
-    top: unset;
-    transform: unset;
-    bottom: 0;
-    width: 50%;
-  }
-`;
+export const TextWrapper = styled.div``;
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     padding-bottom: 40px;
+    margin: 0 8px;
 
-    &:hover {
-      ${TextWrapper} {
-        background-color: rgba(0, 0, 0, 0.4);
-      }
+    .slick-slide {
+      cursor: pointer;
 
-      ${PhotoBook} {
-        filter: brightness(1.1);
+      &:hover {
+        filter: brightness(1.2);
+
+        h2 {
+          color: ${theme.colors.fuchsia[900]};
+        }
       }
     }
 
@@ -47,27 +32,30 @@ export const Wrapper = styled.div`
       }
     }
 
-    .slick-next {
-      right: 20px;
-      z-index: 1;
-    }
-
-    .slick-prev {
-      left: 6px;
-      z-index: 1;
-    }
-
     .slick-dots {
       bottom: -32px;
     }
 
     .slick-dots li button:before {
       color: ${theme.colors.fuchsia[900]};
+      font-size: 8px;
+    }
+
+    .slick-track {
+      display: flex;
+      gap: 16px;
     }
 
     @media (min-width: 800px) {
+      margin: 0 -16px;
+
       .slick-dots {
         bottom: -48px;
+      }
+
+      .slick-track {
+        display: flex;
+        gap: 16px;
       }
     }
   `}
@@ -75,12 +63,7 @@ export const Wrapper = styled.div`
 
 export const SliderItem = styled.div`
   position: relative;
-  border-radius: 0px;
   overflow: hidden;
-
-  @media (min-width: 800px) {
-    border-radius: 8px;
-  }
 `;
 
 export const PhotoBook = styled(Image)`
@@ -88,21 +71,25 @@ export const PhotoBook = styled(Image)`
   object-position: top center;
   width: 100%;
   transition: 0.4s;
-  height: 200px;
+  height: 150px;
+  border-radius: 0;
 
   @media (min-width: 800px) {
-    height: 500px;
+    height: 250px;
+    width: 250px;
+    border-radius: 8px;
   }
 `;
 
 export const Subtitle = styled.h2`
   ${({ theme }) => css`
-    color: ${theme.colors.white};
-    font-size: ${theme.font.sizes.md};
+    color: ${theme.colors.neutral[700]};
+    font-size: ${theme.font.sizes.sm};
     text-align: center;
+    margin-top: 16px;
 
     @media (min-width: 800px) {
-      font-size: ${theme.font.sizes.lg};
+      font-size: ${theme.font.sizes.md};
       text-align: left;
     }
   `}
@@ -110,13 +97,15 @@ export const Subtitle = styled.h2`
 
 export const Description = styled.p`
   ${({ theme }) => css`
-    color: ${theme.colors.white};
+    color: ${theme.colors.neutral[600]};
     font-size: ${theme.font.sizes.sm};
     text-align: center;
+    margin: 0;
 
     @media (min-width: 800px) {
-      font-size: ${theme.font.sizes.md};
+      font-size: ${theme.font.sizes.sm};
       text-align: left;
+      line-height: 24px;
     }
   `}
 `;

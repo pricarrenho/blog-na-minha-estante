@@ -29,11 +29,6 @@ export function HomeTemplate() {
       </S.CustomContainer>
 
       <Container>
-        <S.LinkCategory href="/contos">
-          <Title>Contos</Title>
-        </S.LinkCategory>
-        <CardPostsHome item={contos} />
-
         <S.LinkCategory href="/resenhas">
           <Title>Resenhas</Title>
         </S.LinkCategory>
@@ -43,6 +38,11 @@ export function HomeTemplate() {
           <Title>Autores</Title>
         </S.LinkCategory>
         <CardPostsHome item={autores} />
+
+        <S.LinkCategory href="/contos">
+          <Title>Contos</Title>
+        </S.LinkCategory>
+        <CardPostsHome item={contos} />
       </Container>
       <Footer />
     </main>
