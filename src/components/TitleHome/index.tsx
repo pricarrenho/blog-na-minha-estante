@@ -1,10 +1,16 @@
+import Container from "components/Container";
 import * as S from "./styles";
 
 const TitleHome = () => {
   return (
     <S.Wrapper>
-      <S.Title>Na Minha Estante</S.Title>
-      <S.Subtitle>Tudo sobre o universo dos livros</S.Subtitle>
+      <Container>
+        <S.Title>Explorando a minha estante</S.Title>
+        <S.Subtitle>
+          Descubra resenhas envolventes e sinceras, mergulhe nas curiosidades
+          dos autores e encante-se com contos cativantes
+        </S.Subtitle>
+      </Container>
     </S.Wrapper>
   );
 };

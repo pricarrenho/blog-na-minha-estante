@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 
 export const CustomContainer = styled(Container)`
   padding: 0;
+  margin-top: -62px;
 
   @media (min-width: 800px) {
     padding-left: 16px;
@@ -23,10 +24,10 @@ export const LinkCategory = styled(Link)`
 
     h2:hover {
       color: ${theme.colors.white};
-      background-color: ${theme.colors.fuchsia[900]};
+      background-color: #f72585;
 
       ::before {
-        background-color: ${theme.colors.fuchsia[900]};
+        background-color: #f72585;
       }
     }
   `}

@@ -1,44 +1,45 @@
 import styled, { css } from "styled-components";
-import { Gloria_Hallelujah } from "@next/font/google";
-
-const gloria = Gloria_Hallelujah({
-  weight: ["400"],
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     text-align: center;
-    margin-bottom: 48px;
-    margin-top: 24px;
-    font-family: ${gloria.style.fontFamily};
+    padding: 48px 0 96px;
 
     @media (min-width: 800px) {
-      margin-bottom: 80px;
+      padding: 108px 0 160px;
     }
   `}
 `;
 
 export const Title = styled.h1`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.xl};
-    color: ${theme.colors.fuchsia[800]};
+    font-size: ${theme.font.sizes.lg};
+    font-weight: 600;
+    color: #f72585;
+    margin-bottom: 16px;
 
     @media (min-width: 800px) {
-      font-size: ${theme.font.sizes.xxl};
+      font-size: 48px;
+
+      max-width: 900px;
+      margin: 0 auto 16px;
     }
   `}
 `;
 
 export const Subtitle = styled.h2`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.md};
-    color: ${theme.colors.neutral[700]};
-    line-height: 4px;
+    font-size: ${theme.font.sizes.sm};
+    line-height: 20px;
+    font-weight: 300;
+    max-width: 280px;
+    margin: 0 auto;
+    color: ${theme.colors.neutral[800]};
 
     @media (min-width: 800px) {
-      font-size: ${theme.font.sizes.lg};
+      font-size: 18px;
+      line-height: 26px;
+      max-width: 660px;
     }
   `}
 `;

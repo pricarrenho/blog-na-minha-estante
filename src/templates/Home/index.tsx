@@ -20,9 +20,8 @@ export function HomeTemplate() {
   return (
     <main>
       <Header />
-      <Container>
-        <TitleHome />
-      </Container>
+
+      <TitleHome />
 
       <S.CustomContainer>
         <SimpleSlider item={data} />
