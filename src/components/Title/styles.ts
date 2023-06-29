@@ -3,10 +3,10 @@ import styled, { css } from "styled-components";
 export const Title = styled.h2`
   ${({ theme }) => css`
     display: inline-block;
-    color: ${theme.colors.fuchsia[900]};
+    color: #f72585;
     margin-top: 40px;
     margin-bottom: 24px;
-    border: 3px solid ${theme.colors.fuchsia[900]};
+    border: 3px solid #f72585;
     padding: 4px 16px;
     position: relative;
     font-size: ${theme.font.sizes.lg};
@@ -21,7 +21,7 @@ export const Title = styled.h2`
       position: absolute;
       bottom: -8px;
       left: 16px;
-      border: solid ${theme.colors.fuchsia[900]};
+      border: solid #f72585;
       border-width: 0 3px 3px 0;
       display: inline-block;
       padding: 4px;

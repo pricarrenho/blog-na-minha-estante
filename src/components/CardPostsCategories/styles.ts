@@ -29,7 +29,7 @@ export const Card = styled.div`
         filter: brightness(1.2);
       }
       h2 {
-        color: ${theme.colors.fuchsia[900]};
+        color: #f72585;
       }
     }
   `}

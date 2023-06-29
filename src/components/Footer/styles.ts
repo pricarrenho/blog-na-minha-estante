@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
-    background-color: ${theme.colors.fuchsia[200]};
+    background-color: #f72585;
   `}
 `;
 
@@ -25,15 +25,16 @@ export const ContentText = styled.p`
     font-size: ${theme.font.sizes.ssm};
     line-height: 24px;
     padding: 0px 24px;
+    color: white;
 
     a {
       font-size: ${theme.font.sizes.sm};
-      color: ${theme.colors.fuchsia[900]};
+      color: black;
       transition: 0.2s;
     }
 
     a:hover {
-      color: ${theme.colors.fuchsia[700]};
+      color: ${theme.colors.white};
     }
 
     @media (min-width: 800px) {

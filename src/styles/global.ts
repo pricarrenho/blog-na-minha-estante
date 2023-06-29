@@ -61,8 +61,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     blockquote {
-      color: ${theme.colors.neutral[600]};
-      background: ${theme.colors.fuchsia[100]};
+      color: ${theme.colors.white};
+      background: #f72585;
       font-size: ${theme.font.sizes.md};
       font-weight: 500;
     }

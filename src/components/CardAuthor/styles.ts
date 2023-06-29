@@ -35,7 +35,7 @@ export const AuthorImg = styled(Image)`
 
 export const Title = styled.h2`
   ${({ theme }) => css`
-    color: ${theme.colors.fuchsia[800]};
+    color: #f72585;
     margin-top: 8px;
   `}
 `;
