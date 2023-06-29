@@ -10,12 +10,13 @@ export const Wrapper = styled.div`
 
     .slick-slide {
       cursor: pointer;
+      transition: 0.4s;
 
       &:hover {
         filter: brightness(1.2);
 
         h2 {
-          color: ${theme.colors.fuchsia[900]};
+          color: #f72585;
         }
       }
     }
@@ -24,11 +25,11 @@ export const Wrapper = styled.div`
     .slick-next {
       &::before {
         font-size: ${theme.font.sizes.xl};
-        color: rgba(255, 255, 255, 0.8);
+        color: black;
       }
 
       &:hover::before {
-        color: ${theme.colors.white};
+        color: black;
       }
     }
 
@@ -37,7 +38,7 @@ export const Wrapper = styled.div`
     }
 
     .slick-dots li button:before {
-      color: ${theme.colors.fuchsia[900]};
+      color: #f72585;
       font-size: 8px;
     }
 
@@ -49,13 +50,14 @@ export const Wrapper = styled.div`
     @media (min-width: 800px) {
       margin: 0 -16px;
 
-      .slick-dots {
-        bottom: -48px;
+      .slick-prev,
+      .slick-next {
+        margin-left: -25px;
+        margin-top: -50px;
       }
 
-      .slick-track {
-        display: flex;
-        gap: 16px;
+      .slick-dots {
+        bottom: -48px;
       }
     }
   `}

@@ -6,6 +6,7 @@ export const WrapperContent = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
+    margin-top: 48px;
 
     @media (min-width: 800px) {
       grid-template-columns: repeat(2, 1fr);
@@ -15,7 +16,7 @@ export const WrapperContent = styled.div`
 
 export const CardPost = styled.div`
   ${({ theme }) => css`
-    background: ${theme.colors.fuchsia[50]};
+    background: ${theme.colors.white};
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     border-radius: 8px;
     margin-bottom: 48px;
@@ -50,7 +51,7 @@ export const Content = styled.div`
 
 export const Title = styled.h1`
   ${({ theme }) => css`
-    color: ${theme.colors.fuchsia[900]};
+    color: #f72585;
     margin-top: 56px;
     margin-bottom: 24px;
     margin-top: -56px;

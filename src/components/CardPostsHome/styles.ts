@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
 
 export const Card = styled.div`
   ${({ theme }) => css`
-    background: ${theme.colors.fuchsia[50]};
+    background: white;
     display: flex;
     flex-direction: column;
     border-radius: 8px;
@@ -32,7 +32,7 @@ export const Card = styled.div`
         filter: brightness(1.2);
       }
       h3 {
-        color: ${theme.colors.fuchsia[900]};
+        color: #f72585;
       }
     }
   `}
