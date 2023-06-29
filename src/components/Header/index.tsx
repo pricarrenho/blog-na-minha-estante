@@ -1,11 +1,11 @@
 import { getCategories } from "service/category/getCategories";
 import useSWR from "swr";
-import Image from "next/image";
 import Link from "next/link";
 import logo from "../../assets/img/logo.png";
+import logoPink from "../../assets/img/logoPink.png";
 import Container from "components/Container";
-import * as S from "./styles";
 import { useState } from "react";
+import * as S from "./styles";
 
 function Header() {
   const { data } = useSWR("/api/categories", getCategories);
@@ -21,9 +21,8 @@ function Header() {
         <S.Content>
           <Link href={"/"}>
             <S.ImageLogo
-              src={logo}
+              src={logoPink}
               alt="Logo redondo escrito Na Minha Estante"
-              width="72"
             />
           </Link>
 
