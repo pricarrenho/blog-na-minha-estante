@@ -27,7 +27,6 @@ export const Title = styled.h2`
       width: 80%;
       left: 10%;
       bottom: 50px;
-
       background: ${theme.colors.neutral[300]};
     }
 
@@ -74,9 +73,11 @@ export const Card = styled.div`
 `;
 
 export const PhotoBook = styled(Image)`
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  ${({ theme }) => css`
+    object-fit: cover;
+    border-radius: ${theme.border.size};
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  `}
 `;
 
 export const SubTitle = styled.h3`

@@ -5,7 +5,7 @@ import Container from "components/Container";
 import Header from "components/Header";
 import CardAuthor from "components/CardAuthor";
 import Footer from "components/Footer";
-import CardPosts from "components/CardPosts";
+import CardSmall from "components/CardSmall";
 import * as S from "./styles";
 
 export function PostTemplate({ post }: PostTemplateProps) {
@@ -46,7 +46,7 @@ export function PostTemplate({ post }: PostTemplateProps) {
             <CardAuthor />
           </S.CardAuthorContent>
 
-          <CardPosts title />
+          <CardSmall title />
         </S.WrapperContent>
       </Container>
       <Footer />

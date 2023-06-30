@@ -12,23 +12,10 @@ export const CustomContainer = styled(Container)`
   }
 `;
 
+export const SectionContent = styled.section`
+  margin: 80px 0;
+`;
+
 export const LinkCategory = styled(Link)`
-  ${({ theme }) => css`
-    h2 {
-      transition: 0.2s;
-
-      ::before {
-        transition: color 0.2s, background-color 0.2s;
-      }
-    }
-
-    h2:hover {
-      color: ${theme.colors.white};
-      background-color: #f72585;
-
-      ::before {
-        background-color: #f72585;
-      }
-    }
-  `}
+  ${({ theme }) => css``}
 `;

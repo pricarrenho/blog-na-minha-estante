@@ -1,7 +1,6 @@
 import { getCategories } from "service/category/getCategories";
 import useSWR from "swr";
 import Link from "next/link";
-import logo from "../../assets/img/logo.png";
 import logoPink from "../../assets/img/logoPink.png";
 import Container from "components/Container";
 import { useState } from "react";
@@ -13,32 +12,40 @@ function Header() {
 
   const handleToggleMenu = () => {
     setMobileMenuOpened(!mobileMenuOpened);
+    document
+      .querySelector("body")
+      ?.classList.toggle("no-scroll", !mobileMenuOpened);
+  };
+
+  const handleMenuNavigate = () => {
+    setMobileMenuOpened(false);
+    document.querySelector("body")?.classList.remove("no-scroll");
   };
 
   return (
     <S.Wrapper>
       <Container>
         <S.Content>
-          <Link href={"/"}>
-            <S.ImageLogo
-              src={logoPink}
-              alt="Logo redondo escrito Na Minha Estante"
-            />
+          <Link href={"/"} onClick={handleMenuNavigate}>
+            <S.ImageLogo src={logoPink} alt="Logo Na Minha Estante" />
           </Link>
+
+          <S.Menu onClick={handleToggleMenu} isOpen={mobileMenuOpened}>
+            <div></div>
+          </S.Menu>
 
           <S.MenuContent show={mobileMenuOpened}>
             {data?.map((category: any) => (
               <li key={category.name}>
-                <S.CategoriesLink href={`/${category.slug}`}>
+                <S.CategoriesLink
+                  href={`/${category.slug}`}
+                  onClick={handleMenuNavigate}
+                >
                   {category.name}
                 </S.CategoriesLink>
               </li>
             ))}
           </S.MenuContent>
-
-          <S.Menu onClick={handleToggleMenu} isOpen={mobileMenuOpened}>
-            <div></div>
-          </S.Menu>
         </S.Content>
       </Container>
     </S.Wrapper>

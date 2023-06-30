@@ -1,31 +1,28 @@
 import Link from "next/link";
 import * as S from "./styles";
+import { CardPostAuthorProps } from "./types";
 
-function CardPostsHome({ item }: any) {
+function CardPostAuthor({ item, type }: CardPostAuthorProps) {
   return (
-    <S.Wrapper>
+    <S.ContentCard>
       {item
         ?.map((post: any) => (
-          <S.Card key={post.title}>
+          <S.Card key={post.title} type={type}>
             <Link href={`/${post.category?.slug}/${post.slug}`}>
               <S.PhotoBook
                 src={post.bannerImage.url}
                 alt=""
-                width={380}
-                height={184}
+                width={350}
+                height={350}
               />
 
-              <S.Content>
-                <S.Subtitle>{post.title}</S.Subtitle>
-
-                <S.Description>{post.description}</S.Description>
-              </S.Content>
+              <S.SubTitle type={type}>{post.title}</S.SubTitle>
             </Link>
           </S.Card>
         ))
         .slice(0, 3)}
-    </S.Wrapper>
+    </S.ContentCard>
   );
 }
 
-export default CardPostsHome;
+export default CardPostAuthor;

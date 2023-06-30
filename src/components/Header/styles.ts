@@ -5,7 +5,6 @@ import styled, { css } from "styled-components";
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     background-color: ${theme.colors.white};
-    padding: 8px;
     box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
   `}
 `;
@@ -15,6 +14,11 @@ export const Content = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 60px;
+
+    @media (min-width: 800px) {
+      height: 90px;
+    }
   `}
 `;
 
@@ -38,7 +42,7 @@ export const MenuContent = styled.div<MenuContentProps>`
     box-sizing: border-box;
     text-align: center;
     position: absolute;
-    top: 80px;
+    top: 60px;
     left: 0;
     width: 100vw;
     background-color: ${theme.colors.white};
@@ -49,12 +53,14 @@ export const MenuContent = styled.div<MenuContentProps>`
 
     @media (min-width: 800px) {
       display: flex !important;
+      padding: 0px;
       flex-direction: row;
       box-shadow: none;
       position: relative;
       top: 0px;
       width: max-content;
       height: 100%;
+      align-items: center;
     }
   `}
 `;
@@ -62,6 +68,7 @@ export const MenuContent = styled.div<MenuContentProps>`
 export const CategoriesLink = styled(Link)`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[900]};
+    padding: 20px 10px;
 
     &:hover {
       color: #f72585;
@@ -71,8 +78,9 @@ export const CategoriesLink = styled(Link)`
 
 export const ImageLogo = styled(Image)`
   object-fit: contain;
-  width: 50%;
-  height: 100%;
+  display: block;
+  height: 40px;
+  width: auto;
 
   @media (min-width: 800px) {
     height: 60px;
@@ -102,7 +110,7 @@ const MenuModifier = {
 };
 
 export const Menu = styled.button<MenuProps>`
-  ${({ isOpen }) => css`
+  ${({ isOpen, theme }) => css`
     border: none;
     background: transparent;
 
@@ -115,7 +123,7 @@ export const Menu = styled.button<MenuProps>`
       height: 2px;
       width: 32px;
       background: black;
-      border-radius: 3px;
+      border-radius: ${theme.border.size};
       margin: 7px 0;
       transition: 0.5s;
     }

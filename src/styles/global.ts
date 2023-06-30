@@ -21,6 +21,10 @@ export const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
     }
 
+    body.no-scroll {
+      overflow: hidden;
+    }
+
     html,
     body,
     #__next {

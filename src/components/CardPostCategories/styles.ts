@@ -40,16 +40,18 @@ export const LinkPost = styled(Link)`
 `;
 
 export const PhotoBook = styled(Image)`
-  object-fit: cover;
-  object-position: top center;
-  border-radius: 4px;
-  max-width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-  height: 200px;
+  ${({ theme }) => css`
+    object-fit: cover;
+    object-position: top center;
+    border-radius: ${theme.border.size};
+    max-width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    height: 200px;
 
-  @media (min-width: 800px) {
-    height: 300px;
-  }
+    @media (min-width: 800px) {
+      height: 300px;
+    }
+  `}
 `;
 
 export const Subtitle = styled.h2`

@@ -1,14 +1,15 @@
 import { getPosts } from "service/post/getPosts";
 import useSWR from "swr";
 import Container from "components/Container";
-import CardPostsHome from "components/CardPostsHome";
 import Footer from "components/Footer";
 import Header from "components/Header";
 import SimpleSlider from "components/SimpleSlider";
 import Title from "components/Title";
 import TitleHome from "components/TitleHome";
+import CardPostReviews from "components/CardPostReviews";
+import CardPostsTales from "components/CardPostTales";
+import CardPostAuthor from "components/CardPostAuthor";
 import * as S from "./styles";
-import Link from "next/link";
 
 export function HomeTemplate() {
   const { data } = useSWR("/api/posts", getPosts);
@@ -28,20 +29,29 @@ export function HomeTemplate() {
       </S.CustomContainer>
 
       <Container>
-        <S.LinkCategory href="/resenhas">
-          <Title>Resenhas</Title>
-        </S.LinkCategory>
-        <CardPostsHome item={resenhas} />
+        <S.SectionContent>
+          <S.LinkCategory href="/resenhas">
+            <Title type="primary">Resenhas</Title>
+          </S.LinkCategory>
 
-        <S.LinkCategory href="/autores">
-          <Title>Autores</Title>
-        </S.LinkCategory>
-        <CardPostsHome item={autores} />
+          <CardPostReviews type="primary" item={resenhas} />
+        </S.SectionContent>
 
-        <S.LinkCategory href="/contos">
-          <Title>Contos</Title>
-        </S.LinkCategory>
-        <CardPostsHome item={contos} />
+        <S.SectionContent>
+          <S.LinkCategory href="/contos">
+            <Title type="secondary">Contos</Title>
+          </S.LinkCategory>
+
+          <CardPostsTales type="secondary" item={contos} />
+        </S.SectionContent>
+
+        <S.SectionContent>
+          <S.LinkCategory href="/autores">
+            <Title type="primary">Autores</Title>
+          </S.LinkCategory>
+
+          <CardPostAuthor type="primary" item={autores} />
+        </S.SectionContent>
       </Container>
       <Footer />
     </main>

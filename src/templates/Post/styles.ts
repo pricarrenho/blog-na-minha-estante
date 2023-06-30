@@ -18,7 +18,7 @@ export const CardPost = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.white};
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-    border-radius: 8px;
+    border-radius: ${theme.border.size};
     margin-bottom: 48px;
   `}
 `;
@@ -39,7 +39,7 @@ export const Content = styled.div`
     blockquote {
       margin: 64px 16px;
       padding: 24px;
-      border-radius: 8px;
+      border-radius: ${theme.border.size};
       text-align: center;
     }
 

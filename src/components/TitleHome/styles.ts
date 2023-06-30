@@ -13,14 +13,13 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h1`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.lg};
+    font-size: ${theme.font.sizes.xl};
     font-weight: 600;
     color: #f72585;
     margin-bottom: 16px;
 
     @media (min-width: 800px) {
       font-size: 48px;
-
       max-width: 900px;
       margin: 0 auto 16px;
     }

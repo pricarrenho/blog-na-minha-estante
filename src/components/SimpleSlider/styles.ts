@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
         filter: brightness(1.2);
 
         h2 {
-          color: #f72585;
+          color: #3f37c9;
         }
       }
     }
@@ -24,12 +24,13 @@ export const Wrapper = styled.div`
     .slick-prev,
     .slick-next {
       &::before {
-        font-size: ${theme.font.sizes.xl};
-        color: black;
+        font-size: 32px;
+        font-weight: 800;
+        color: #4361ee;
       }
 
       &:hover::before {
-        color: black;
+        color: #4361ee;
       }
     }
 
@@ -38,7 +39,7 @@ export const Wrapper = styled.div`
     }
 
     .slick-dots li button:before {
-      color: #f72585;
+      color: #4361ee;
       font-size: 8px;
     }
 
@@ -69,23 +70,25 @@ export const SliderItem = styled.div`
 `;
 
 export const PhotoBook = styled(Image)`
-  object-fit: cover;
-  object-position: top center;
-  width: 100%;
-  transition: 0.4s;
-  height: 150px;
-  border-radius: 0;
+  ${({ theme }) => css`
+    object-fit: cover;
+    object-position: top center;
+    width: 100%;
+    transition: 0.4s;
+    height: 150px;
+    border-radius: 0;
 
-  @media (min-width: 800px) {
-    height: 250px;
-    width: 250px;
-    border-radius: 8px;
-  }
+    @media (min-width: 800px) {
+      height: 250px;
+      width: 250px;
+      border-radius: ${theme.border.size};
+    }
+  `}
 `;
 
 export const Subtitle = styled.h2`
   ${({ theme }) => css`
-    color: ${theme.colors.neutral[700]};
+    color: #4361ee;
     font-size: ${theme.font.sizes.sm};
     text-align: center;
     margin-top: 16px;

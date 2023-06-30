@@ -3,7 +3,7 @@ import { getPostsByCategory } from "service/post/getPostsbyCategory";
 import useSWR from "swr";
 import Header from "components/Header";
 import Container from "components/Container";
-import CardPostsCategories from "components/CardPostsCategories";
+import CardPostsCategories from "components/CardPostCategories";
 import Footer from "components/Footer";
 import Title from "components/Title";
 import * as S from "./styles";

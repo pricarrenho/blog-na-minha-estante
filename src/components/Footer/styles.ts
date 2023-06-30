@@ -29,7 +29,7 @@ export const ContentText = styled.p`
 
     a {
       font-size: ${theme.font.sizes.sm};
-      color: black;
+      color: #3f37c9;
       transition: 0.2s;
     }
 

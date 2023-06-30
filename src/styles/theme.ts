@@ -36,9 +36,13 @@ const font = {
     sm: "1.4rem",
     md: "1.6rem",
     lg: "2.4rem",
-    xl: "3.2rem",
+    xl: "3.6rem",
     xxl: "6.4rem",
   },
+};
+
+const border = {
+  size: "6px",
 };
 
 export const themeWhite = {
@@ -47,4 +51,5 @@ export const themeWhite = {
     background: colors.white,
   },
   font,
+  border,
 };
