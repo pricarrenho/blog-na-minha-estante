@@ -6,6 +6,8 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     background-color: ${theme.colors.white};
     box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
   `}
 `;
 
@@ -38,11 +40,11 @@ export const MenuContent = styled.div<MenuContentProps>`
     flex-direction: column;
     gap: 24px;
     padding: 40px;
-    height: 100vh;
+    height: calc(100vh - 68px);
     box-sizing: border-box;
     text-align: center;
-    position: absolute;
-    top: 60px;
+    position: fixed;
+    top: 68px;
     left: 0;
     width: 100vw;
     background-color: ${theme.colors.white};
@@ -96,11 +98,11 @@ const MenuModifier = {
   isOpen: () => css`
     &:before {
       transform: translateY(12px) rotate(135deg);
-      margin-left: -4px;
+      margin-left: -3px;
     }
     &:after {
       transform: translateY(-12px) rotate(-135deg);
-      margin-top: 12px;
+      margin-top: 14px;
       margin-left: -3px;
     }
     & div {
@@ -121,10 +123,10 @@ export const Menu = styled.button<MenuProps>`
       position: relative;
       display: block;
       height: 2px;
-      width: 32px;
+      width: 22px;
       background: black;
       border-radius: ${theme.border.size};
-      margin: 7px 0;
+      margin: 5px 0;
       transition: 0.5s;
     }
 
