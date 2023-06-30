@@ -20,7 +20,7 @@ export function CategoryTemplate({ category }: CategoryProps) {
       <Header />
       <Container>
         <S.Content>
-          <Title>Últimas Postagens</Title>
+          <Title type="primary">Últimas Postagens</Title>
           <CardPostsCategories items={data} />
         </S.Content>
       </Container>

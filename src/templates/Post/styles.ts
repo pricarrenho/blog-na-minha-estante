@@ -25,9 +25,10 @@ export const CardPost = styled.div`
 
 export const PhotoBook = styled(Image)`
   object-fit: cover;
+  filter: blur(6px);
   border-radius: 8px 8px 0px 0px;
   mask-image: linear-gradient(to top, transparent 10%, white 75%);
-  opacity: 0.5;
+  opacity: 0.3;
   width: 100%;
 `;
 
@@ -37,10 +38,14 @@ export const Content = styled.div`
     display: grid;
 
     blockquote {
-      margin: 64px 16px;
+      margin: 48px 16px;
       padding: 24px;
       border-radius: ${theme.border.size};
       text-align: center;
+      color: ${theme.colors.white};
+      background: #f72585;
+      font-size: ${theme.font.sizes.md};
+      font-weight: 500;
     }
 
     @media (min-width: 800px) {
@@ -62,6 +67,7 @@ export const PhotoBookInside = styled(Image)`
   width: 100%;
   object-fit: cover;
   height: 200px;
+  margin-bottom: 24px;
 
   @media (min-width: 800px) {
     height: 500px;

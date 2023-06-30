@@ -16,8 +16,6 @@ export const Title = styled.h2`
     text-align: center;
     text-transform: uppercase;
     font-weight: 200;
-    margin-top: 32px;
-    margin-bottom: 16px;
     position: relative;
 
     &::after {
@@ -31,8 +29,8 @@ export const Title = styled.h2`
     }
 
     @media (min-width: 800px) {
-      margin-top: 48px;
-      margin-bottom: 40px;
+      margin-bottom: 16px;
+      margin-top: 24px;
 
       &::after {
         width: 100%;
