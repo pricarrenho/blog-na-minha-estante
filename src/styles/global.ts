@@ -39,6 +39,11 @@ export const GlobalStyle = createGlobalStyle`
       font-weight: 400;
     }
 
+    ::selection {
+      color: white;
+      background: #f72585;
+    }
+
     a {
       text-decoration: none;
       font-size: ${theme.font.sizes.md};
@@ -62,13 +67,6 @@ export const GlobalStyle = createGlobalStyle`
       @media (min-width: 800px) {
         line-height: 32px;
       }
-    }
-
-    blockquote {
-      color: ${theme.colors.white};
-      background: #f72585;
-      font-size: ${theme.font.sizes.md};
-      font-weight: 500;
     }
 
     button {
