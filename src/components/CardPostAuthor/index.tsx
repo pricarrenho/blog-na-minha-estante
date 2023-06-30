@@ -7,8 +7,8 @@ function CardPostAuthor({ item, type }: CardPostAuthorProps) {
     <S.ContentCard>
       {item
         ?.map((post: any) => (
-          <S.Card key={post.title} type={type}>
-            <Link href={`/${post.category?.slug}/${post.slug}`}>
+          <Link href={`/${post.category?.slug}/${post.slug}`} key={post.title}>
+            <S.Card type={type}>
               <S.PhotoBook
                 src={post.bannerImage.url}
                 alt=""
@@ -17,8 +17,8 @@ function CardPostAuthor({ item, type }: CardPostAuthorProps) {
               />
 
               <S.SubTitle type={type}>{post.title}</S.SubTitle>
-            </Link>
-          </S.Card>
+            </S.Card>
+          </Link>
         ))
         .slice(0, 3)}
     </S.ContentCard>

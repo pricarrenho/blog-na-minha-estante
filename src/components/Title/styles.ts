@@ -47,6 +47,7 @@ export const Title = styled.h2<StyledTitleProps>`
     position: relative;
     font-size: ${theme.font.sizes.lg};
     transition: 0.2s;
+    border-width: 3px;
 
     @media (min-width: 800px) {
       margin-bottom: 32px;
