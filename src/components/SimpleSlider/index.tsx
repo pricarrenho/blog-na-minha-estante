@@ -14,10 +14,11 @@ export function SimpleSlider({ item }: any) {
   return (
     <S.Wrapper>
       <Slider {...settings}>
-        {item?.map((post: any) => (
+        {item?.map((post: any, index: number) => (
           <S.SliderItem key={post.title}>
             <div onClick={() => handleOnItemClick(post)}>
               <S.PhotoBook
+                loading={index > 4 ? "lazy" : "eager"}
                 src={post.bannerImage.url}
                 alt={`Imagem banner do post ${post.title}`}
                 width={300}
