@@ -16,7 +16,7 @@ export function CardPostAuthor({ item, type }: CardPostAuthorProps) {
                 height={350}
               />
 
-              <S.SubTitle type={type}>{post.title}</S.SubTitle>
+              <S.SubTitle>{post.title}</S.SubTitle>
             </S.Card>
           </Link>
         ))
