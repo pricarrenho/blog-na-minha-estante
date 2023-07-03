@@ -30,6 +30,8 @@ export function PostTemplate({ post }: PostTemplateProps) {
                 alt="Foto do livro"
                 width={800}
                 height={150}
+                loading="eager"
+                quality={1}
               />
 
               <S.Content>
@@ -41,6 +43,7 @@ export function PostTemplate({ post }: PostTemplateProps) {
                     alt="Foto do livro"
                     width={700}
                     height={500}
+                    loading="eager"
                   />
                 )}
 
