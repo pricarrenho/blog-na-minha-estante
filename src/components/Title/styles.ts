@@ -1,38 +1,38 @@
-import styled, { css } from "styled-components";
+import styled, { DefaultTheme, css } from "styled-components";
 import { TitleProps } from "./types";
 
 type StyledTitleProps = Pick<TitleProps, "type">;
 
 const TitleModifier = {
-  primary: () => css`
-    color: #f72585;
-    border-color: #f72585;
+  primary: (theme: DefaultTheme) => css`
+    color: ${theme.colors.primary[50]};
+    border-color: ${theme.colors.primary[50]};
 
     &::before {
-      border-color: #f72585;
+      border-color: ${theme.colors.primary[50]};
     }
 
     &:hover {
-      background-color: #f72585;
+      background-color: ${theme.colors.primary[50]};
 
       ::before {
-        background-color: #f72585;
+        background-color: ${theme.colors.primary[50]};
       }
     }
   `,
-  secondary: () => css`
-    color: #4361ee;
-    border-color: #4361ee;
+  secondary: (theme: DefaultTheme) => css`
+    color: ${theme.colors.secondary[200]};
+    border-color: ${theme.colors.secondary[200]};
 
     &::before {
-      border-color: #4361ee;
+      border-color: ${theme.colors.secondary[200]};
     }
 
     &:hover {
-      background-color: #4361ee;
+      background-color: ${theme.colors.secondary[200]};
 
       ::before {
-        background-color: #4361ee;
+        background-color: ${theme.colors.secondary[200]};
       }
     }
   `,
@@ -63,7 +63,7 @@ export const Title = styled.h2<StyledTitleProps>`
       display: inline-block;
       padding: 4px;
       transform: rotate(45deg);
-      background-color: white;
+      background-color: ${theme.colors.white};
       transition: color 0.2s, background-color 0.2s;
     }
 
@@ -71,6 +71,6 @@ export const Title = styled.h2<StyledTitleProps>`
       color: ${theme.colors.white};
     }
 
-    ${type && TitleModifier[type]}
+    ${type && TitleModifier[type](theme)}
   `}
 `;

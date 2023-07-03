@@ -43,7 +43,7 @@ export const Content = styled.div`
       border-radius: ${theme.border.size};
       text-align: center;
       color: ${theme.colors.white};
-      background: #f72585;
+      background: ${theme.colors.primary[50]};
       font-size: ${theme.font.sizes.md};
       font-weight: 500;
     }
@@ -56,7 +56,7 @@ export const Content = styled.div`
 
 export const Title = styled.h1`
   ${({ theme }) => css`
-    color: #f72585;
+    color: ${theme.colors.primary[50]};
     margin-top: 56px;
     margin-bottom: 24px;
     margin-top: -56px;

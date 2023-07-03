@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styled, { css } from "styled-components";
+import styled, { DefaultTheme, css } from "styled-components";
 import { CardPostTalesProps } from "./types";
 
 export const Wrapper = styled.div`
@@ -18,18 +18,18 @@ export const Wrapper = styled.div`
 type CardProps = Pick<CardPostTalesProps, "type">;
 
 const CardModifier = {
-  primary: () => css`
+  primary: (theme: DefaultTheme) => css`
     &:hover {
       h3 {
-        color: #b5179e;
+        color: ${theme.colors.primary[100]};
       }
     }
   `,
-  secondary: () =>
+  secondary: (theme: DefaultTheme) =>
     css`
       &:hover {
         h3 {
-          color: #3f37c9;
+          color: ${theme.colors.secondary[300]};
         }
       }
     `,
@@ -49,7 +49,7 @@ export const Card = styled.div<CardProps>`
       }
     }
 
-    ${type && CardModifier[type]}
+    ${type && CardModifier[type](theme)}
   `}
 `;
 
@@ -83,23 +83,23 @@ export const Content = styled.div`
 type SubtitleProps = Pick<CardPostTalesProps, "type">;
 
 const SubtitleModifier = {
-  primary: () => css`
-    color: #f72585;
+  primary: (theme: DefaultTheme) => css`
+    color: ${theme.colors.primary[50]};
   `,
-  secondary: () =>
+  secondary: (theme: DefaultTheme) =>
     css`
-      color: #4361ee;
+      color: ${theme.colors.secondary[200]};
     `,
 };
 
 export const Subtitle = styled.h3<SubtitleProps>`
   ${({ theme, type }) => css`
-    color: #4361ee;
+    color: ${theme.colors.secondary[200]};
     transition: 0.2s;
     margin-bottom: 4px;
     font-size: ${theme.font.sizes.md};
 
-    ${type && SubtitleModifier[type]}
+    ${type && SubtitleModifier[type](theme)}
   `}
 `;
 

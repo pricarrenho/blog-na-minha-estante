@@ -14,8 +14,9 @@ export const Wrapper = styled.div`
 export const Title = styled.h1`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.xl};
+    line-height: 40px;
     font-weight: 600;
-    color: #f72585;
+    color: ${theme.colors.primary[50]};
     margin-bottom: 16px;
 
     @media (min-width: 800px) {

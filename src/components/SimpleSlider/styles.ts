@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
         filter: brightness(1.2);
 
         h2 {
-          color: #3f37c9;
+          color: ${theme.colors.secondary[300]};
         }
       }
     }
@@ -26,11 +26,11 @@ export const Wrapper = styled.div`
       &::before {
         font-size: 32px;
         font-weight: 800;
-        color: #4361ee;
+        color: ${theme.colors.secondary[200]};
       }
 
       &:hover::before {
-        color: #4361ee;
+        color: ${theme.colors.secondary[200]};
       }
     }
 
@@ -39,7 +39,7 @@ export const Wrapper = styled.div`
     }
 
     .slick-dots li button:before {
-      color: #4361ee;
+      color: ${theme.colors.secondary[200]};
       font-size: 8px;
     }
 
@@ -88,7 +88,7 @@ export const PhotoBook = styled(Image)`
 
 export const Subtitle = styled.h2`
   ${({ theme }) => css`
-    color: #4361ee;
+    color: ${theme.colors.secondary[200]};
     font-size: ${theme.font.sizes.sm};
     text-align: center;
     margin-top: 16px;

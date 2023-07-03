@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
-    background-color: #f72585;
+    background-color: ${theme.colors.primary[50]};
   `}
 `;
 
@@ -25,7 +25,7 @@ export const ContentText = styled.p`
     font-size: ${theme.font.sizes.ssm};
     line-height: 24px;
     padding: 0px 24px;
-    color: white;
+    color: ${theme.colors.white};
 
     a {
       font-size: ${theme.font.sizes.sm};
@@ -34,7 +34,7 @@ export const ContentText = styled.p`
     }
 
     a:hover {
-      color: ${theme.colors.white};
+      color: ${theme.colors.primary[100]};
     }
 
     @media (min-width: 800px) {

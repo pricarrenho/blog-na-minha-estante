@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styled, { css } from "styled-components";
+import styled, { DefaultTheme, css } from "styled-components";
 import { CardPostReviewsProps } from "./types";
 
 export const Wrapper = styled.div`
@@ -15,29 +15,29 @@ export const Wrapper = styled.div`
   `}
 `;
 
-type CardProps = Pick<CardPostReviewsProps, "type">;
+type CardPostProps = Pick<CardPostReviewsProps, "type">;
 
 const CardModifier = {
-  primary: () => css`
+  primary: (theme: DefaultTheme) => css`
     &:hover {
       h3 {
-        color: #b5179e;
+        color: ${theme.colors.primary[100]};
       }
     }
   `,
-  secondary: () =>
+  secondary: (theme: DefaultTheme) =>
     css`
       &:hover {
         h3 {
-          color: #3f37c9;
+          color: ${theme.colors.secondary[300]};
         }
       }
     `,
 };
 
-export const Card = styled.div<CardProps>`
+export const Card = styled.div<CardPostProps>`
   ${({ theme, type }) => css`
-    background: white;
+    background: ${theme.colors.white};
     display: flex;
     flex-direction: column;
 
@@ -51,7 +51,26 @@ export const Card = styled.div<CardProps>`
       }
     }
 
-    ${type && CardModifier[type]}
+    ${type && CardModifier[type](theme)}
+  `}
+`;
+
+const SubtitleModifier = {
+  primary: (theme: DefaultTheme) => css`
+    color: ${theme.colors.primary[50]};
+  `,
+  secondary: (theme: DefaultTheme) =>
+    css`
+      color: ${theme.colors.secondary[200]};
+    `,
+};
+
+export const Subtitle = styled.h3<CardPostProps>`
+  ${({ theme, type }) => css`
+    transition: 0.2s;
+    margin-bottom: 8px;
+
+    ${type && SubtitleModifier[type](theme)}
   `}
 `;
 
@@ -71,27 +90,6 @@ export const Content = styled.div`
     flex-direction: column;
     flex: 1;
     margin-top: 16px;
-  `}
-`;
-
-type SubtitleProps = Pick<CardPostReviewsProps, "type">;
-
-const SubtitleModifier = {
-  primary: () => css`
-    color: #f72585;
-  `,
-  secondary: () =>
-    css`
-      color: #4361ee;
-    `,
-};
-
-export const Subtitle = styled.h3<CardPostReviewsProps>`
-  ${({ theme, type }) => css`
-    transition: 0.2s;
-    margin-bottom: 8px;
-
-    ${type && SubtitleModifier[type]}
   `}
 `;
 

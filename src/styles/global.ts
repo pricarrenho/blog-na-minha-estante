@@ -40,8 +40,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     ::selection {
-      color: white;
-      background: #f72585;
+      color: ${theme.colors.white};
+      background: ${theme.colors.primary[50]};
     }
 
     a {

@@ -64,7 +64,7 @@ export const Card = styled.div`
         filter: brightness(1.2);
       }
       h3 {
-        color: #f72585;
+        color: ${theme.colors.primary[100]};
       }
     }
   `}
@@ -80,7 +80,7 @@ export const PhotoBook = styled(Image)`
 
 export const SubTitle = styled.h3`
   ${({ theme }) => css`
-    color: ${theme.colors.neutral[700]};
+    color: ${theme.colors.primary[50]};
     font-size: ${theme.font.sizes.md};
     text-align: center;
   `}

@@ -73,7 +73,7 @@ export const CategoriesLink = styled(Link)`
     padding: 20px 10px;
 
     &:hover {
-      color: #f72585;
+      color: ${theme.colors.primary[50]};
     }
   `}
 `;
@@ -124,7 +124,7 @@ export const Menu = styled.button<MenuProps>`
       display: block;
       height: 2px;
       width: 22px;
-      background: black;
+      background: ${theme.colors.black};
       border-radius: ${theme.border.size};
       margin: 5px 0;
       transition: 0.5s;

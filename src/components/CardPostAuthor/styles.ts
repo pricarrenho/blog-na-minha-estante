@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styled, { css } from "styled-components";
+import styled, { DefaultTheme, css } from "styled-components";
 import { CardPostAuthorProps } from "./types";
 
 export const Wrapper = styled.div`
@@ -27,18 +27,22 @@ export const ContentCard = styled.div`
 type CardProps = Pick<CardPostAuthorProps, "type">;
 
 const CardModifier = {
-  primary: () => css`
+  primary: (theme: DefaultTheme) => css`
     &:hover {
       &::before {
-        background: linear-gradient(180deg, rgba(46, 45, 45, 0) 0, #f7258566);
+        background: linear-gradient(
+          180deg,
+          rgba(46, 45, 45, 0) 0,
+          ${theme.colors.primary[50]}66
+        );
       }
     }
   `,
-  secondary: () =>
+  secondary: (theme: DefaultTheme) =>
     css`
       &:hover {
         h3 {
-          color: #3f37c9;
+          color: ${theme.colors.secondary[300]};
         }
       }
     `,
@@ -75,7 +79,7 @@ export const Card = styled.div<CardProps>`
       }
     }
 
-    ${type && CardModifier[type]}
+    ${type && CardModifier[type](theme)}
   `}
 `;
 
@@ -90,20 +94,8 @@ export const PhotoBook = styled(Image)`
   `}
 `;
 
-type SubtitleProps = Pick<CardPostAuthorProps, "type">;
-
-const SubtitleModifier = {
-  primary: () => css`
-    color: white;
-  `,
-  secondary: () =>
-    css`
-      color: #4361ee;
-    `,
-};
-
-export const SubTitle = styled.h3<SubtitleProps>`
-  ${({ theme, type }) => css`
+export const SubTitle = styled.h3`
+  ${({ theme }) => css`
     font-size: ${theme.font.sizes.lg};
     text-align: center;
     position: absolute;
@@ -111,7 +103,6 @@ export const SubTitle = styled.h3<SubtitleProps>`
     left: 50%;
     transform: translate(-50%);
     z-index: 2;
-
-    ${type && SubtitleModifier[type]}
+    color: ${theme.colors.white};
   `}
 `;
