@@ -1,8 +1,8 @@
 import Link from "next/link";
-import * as S from "./styles";
 import { CardPostReviewsProps } from "./types";
+import * as S from "./styles";
 
-function CardPostReviews({ item, type }: CardPostReviewsProps) {
+export function CardPostReviews({ item, type }: CardPostReviewsProps) {
   const minifyDescription = (value: string) => {
     const maxLength = 82;
 
@@ -37,5 +37,3 @@ function CardPostReviews({ item, type }: CardPostReviewsProps) {
     </S.Wrapper>
   );
 }
-
-export default CardPostReviews;

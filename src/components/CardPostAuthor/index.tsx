@@ -1,8 +1,8 @@
 import Link from "next/link";
-import * as S from "./styles";
 import { CardPostAuthorProps } from "./types";
+import * as S from "./styles";
 
-function CardPostAuthor({ item, type }: CardPostAuthorProps) {
+export function CardPostAuthor({ item, type }: CardPostAuthorProps) {
   return (
     <S.ContentCard>
       {item
@@ -24,5 +24,3 @@ function CardPostAuthor({ item, type }: CardPostAuthorProps) {
     </S.ContentCard>
   );
 }
-
-export default CardPostAuthor;

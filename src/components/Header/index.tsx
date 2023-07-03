@@ -2,11 +2,11 @@ import { getCategories } from "service/category/getCategories";
 import useSWR from "swr";
 import Link from "next/link";
 import logoPink from "../../assets/img/logoPink.png";
-import Container from "components/Container";
+import { Container } from "components/Container";
 import { useState } from "react";
 import * as S from "./styles";
 
-function Header() {
+export function Header() {
   const { data } = useSWR("/api/categories", getCategories);
   const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
 
@@ -51,5 +51,3 @@ function Header() {
     </S.Wrapper>
   );
 }
-
-export default Header;

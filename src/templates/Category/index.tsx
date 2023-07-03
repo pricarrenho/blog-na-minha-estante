@@ -1,11 +1,12 @@
+import Head from "next/head";
+import useSWR from "swr";
 import { CategoryProps } from "./types";
 import { getPostsByCategory } from "service/post/getPostsbyCategory";
-import useSWR from "swr";
-import Header from "components/Header";
-import Container from "components/Container";
-import CardPostsCategories from "components/CardPostCategories";
-import Footer from "components/Footer";
-import Title from "components/Title";
+import { Header } from "components/Header";
+import { Container } from "components/Container";
+import { CardPostsCategories } from "components/CardPostCategories";
+import { Footer } from "components/Footer";
+import { Title } from "components/Title";
 import * as S from "./styles";
 
 export function CategoryTemplate({ category }: CategoryProps) {
@@ -15,8 +16,17 @@ export function CategoryTemplate({ category }: CategoryProps) {
     getPostsByCategory(categorySlug)
   );
 
+  const categoryTitle =
+    categorySlug[0].toUpperCase() + categorySlug.substring(1);
+
   return (
-    <main>
+    <>
+      <div>
+        <Head>
+          <title> Na Minha Estante - {categoryTitle}</title>
+        </Head>
+      </div>
+
       <Header />
       <Container>
         <S.Content>
@@ -25,6 +35,6 @@ export function CategoryTemplate({ category }: CategoryProps) {
         </S.Content>
       </Container>
       <Footer />
-    </main>
+    </>
   );
 }

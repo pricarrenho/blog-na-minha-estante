@@ -1,7 +1,7 @@
 import photoPerfil from "../../assets/img/photoPerfil.png";
 import * as S from "./styles";
 
-function CardAuthor() {
+export function CardAuthor() {
   return (
     <S.Wrapper>
       <S.AuthorImg
@@ -21,5 +21,3 @@ function CardAuthor() {
     </S.Wrapper>
   );
 }
-
-export default CardAuthor;

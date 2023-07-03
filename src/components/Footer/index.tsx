@@ -1,8 +1,8 @@
-import Container from "components/Container";
-import * as S from "./styles";
+import { Container } from "components/Container";
 import Link from "next/link";
+import * as S from "./styles";
 
-function Footer() {
+export function Footer() {
   return (
     <S.Wrapper>
       <Container>
@@ -21,5 +21,3 @@ function Footer() {
     </S.Wrapper>
   );
 }
-
-export default Footer;

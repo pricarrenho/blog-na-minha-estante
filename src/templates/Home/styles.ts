@@ -1,4 +1,4 @@
-import Container from "components/Container";
+import { Container } from "components/Container";
 import Link from "next/link";
 import styled, { css } from "styled-components";
 

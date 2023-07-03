@@ -1,7 +1,7 @@
-import * as S from "./styles";
 import { CardPostTalesProps } from "./types";
+import * as S from "./styles";
 
-function CardPostTales({ item, type }: CardPostTalesProps) {
+export function CardPostTales({ item, type }: CardPostTalesProps) {
   return (
     <S.Wrapper>
       {item
@@ -27,5 +27,3 @@ function CardPostTales({ item, type }: CardPostTalesProps) {
     </S.Wrapper>
   );
 }
-
-export default CardPostTales;

@@ -1,14 +1,15 @@
-import { getPosts } from "service/post/getPosts";
+import Head from "next/head";
 import useSWR from "swr";
-import Container from "components/Container";
-import Footer from "components/Footer";
-import Header from "components/Header";
-import SimpleSlider from "components/SimpleSlider";
-import Title from "components/Title";
-import TitleHome from "components/TitleHome";
-import CardPostReviews from "components/CardPostReviews";
-import CardPostsTales from "components/CardPostTales";
-import CardPostAuthor from "components/CardPostAuthor";
+import { getPosts } from "service/post/getPosts";
+import { Container } from "components/Container";
+import { Footer } from "components/Footer";
+import { Header } from "components/Header";
+import { SimpleSlider } from "components/SimpleSlider";
+import { Title } from "components/Title";
+import { TitleHome } from "components/TitleHome";
+import { CardPostReviews } from "components/CardPostReviews";
+import { CardPostTales } from "components/CardPostTales";
+import { CardPostAuthor } from "components/CardPostAuthor";
 import * as S from "./styles";
 
 export function HomeTemplate() {
@@ -19,7 +20,13 @@ export function HomeTemplate() {
   const autores = data?.filter((item) => item?.category?.slug === "autores");
 
   return (
-    <main>
+    <>
+      <div>
+        <Head>
+          <title>Na Minha Estante</title>
+        </Head>
+      </div>
+
       <Header />
 
       <TitleHome />
@@ -42,7 +49,7 @@ export function HomeTemplate() {
             <Title type="secondary">Contos</Title>
           </S.LinkCategory>
 
-          <CardPostsTales type="secondary" item={contos} />
+          <CardPostTales type="secondary" item={contos} />
         </S.SectionContent>
 
         <S.SectionContent>
@@ -54,6 +61,6 @@ export function HomeTemplate() {
         </S.SectionContent>
       </Container>
       <Footer />
-    </main>
+    </>
   );
 }

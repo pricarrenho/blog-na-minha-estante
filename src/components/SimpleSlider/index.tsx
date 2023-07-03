@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import { useSimpleSlider } from "./useSimpleSlider";
 import * as S from "./styles";
 
-function SimpleSlider({ item }: any) {
+export function SimpleSlider({ item }: any) {
   const { settings, handleOnItemClick } = useSimpleSlider();
 
   const minifyDescription = (value: string) => {
@@ -38,5 +38,3 @@ function SimpleSlider({ item }: any) {
     </S.Wrapper>
   );
 }
-
-export default SimpleSlider;

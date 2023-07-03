@@ -1,7 +1,7 @@
-import Container from "components/Container";
+import { Container } from "components/Container";
 import * as S from "./styles";
 
-const TitleHome = () => {
+export const TitleHome = () => {
   return (
     <S.Wrapper>
       <Container>
@@ -14,5 +14,3 @@ const TitleHome = () => {
     </S.Wrapper>
   );
 };
-
-export default TitleHome;

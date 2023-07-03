@@ -1,11 +1,12 @@
+import Head from "next/head";
+import useSWR from "swr";
 import { getPost } from "service/post/getPost";
 import { PostTemplateProps } from "./types";
-import useSWR from "swr";
-import Container from "components/Container";
-import Header from "components/Header";
-import CardAuthor from "components/CardAuthor";
-import Footer from "components/Footer";
-import CardSmall from "components/CardSmall";
+import { Container } from "components/Container";
+import { Header } from "components/Header";
+import { CardAuthor } from "components/CardAuthor";
+import { Footer } from "components/Footer";
+import { CardSmall } from "components/CardSmall";
 import * as S from "./styles";
 
 export function PostTemplate({ post }: PostTemplateProps) {
@@ -13,6 +14,12 @@ export function PostTemplate({ post }: PostTemplateProps) {
 
   return (
     <>
+      <div>
+        <Head>
+          <title>Na Minha Estante - {data?.title} </title>
+        </Head>
+      </div>
+
       <Header />
       <Container>
         <S.WrapperContent>
@@ -46,7 +53,7 @@ export function PostTemplate({ post }: PostTemplateProps) {
             <CardAuthor />
           </S.CardAuthorContent>
 
-          <CardSmall title />
+          <CardSmall />
         </S.WrapperContent>
       </Container>
       <Footer />

@@ -1,6 +1,6 @@
 import * as S from "./styles";
 
-function CardPostsCategories({ items }: any) {
+export function CardPostsCategories({ items }: any) {
   return (
     <S.Wrapper>
       {items?.map((post: any) => (
@@ -19,5 +19,3 @@ function CardPostsCategories({ items }: any) {
     </S.Wrapper>
   );
 }
-
-export default CardPostsCategories;

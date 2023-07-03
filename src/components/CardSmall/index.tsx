@@ -3,12 +3,12 @@ import useSWR from "swr";
 import Link from "next/link";
 import * as S from "./styles";
 
-function CardPostsP({ title }: any) {
+export function CardSmall() {
   const { data } = useSWR("/api/posts", getPosts);
 
   return (
     <S.Wrapper>
-      {title && <S.Title title={title}>Você também pode gostar </S.Title>}
+      <S.Title>Você também pode gostar </S.Title>
 
       <S.ContentCard>
         {data
@@ -31,5 +31,3 @@ function CardPostsP({ title }: any) {
     </S.Wrapper>
   );
 }
-
-export default CardPostsP;
