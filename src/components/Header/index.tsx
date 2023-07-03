@@ -27,10 +27,19 @@ export function Header() {
       <Container>
         <S.Content>
           <Link href={"/"} onClick={handleMenuNavigate}>
-            <S.ImageLogo src={logoPink} alt="Logo Na Minha Estante" />
+            <S.ImageLogo
+              src={logoPink}
+              alt="Logo Na Minha Estante"
+              width={230}
+              height={60}
+            />
           </Link>
 
-          <S.Menu onClick={handleToggleMenu} isOpen={mobileMenuOpened}>
+          <S.Menu
+            onClick={handleToggleMenu}
+            isOpen={mobileMenuOpened}
+            aria-label={mobileMenuOpened ? "Fechar menu" : "Abrir menu"}
+          >
             <div></div>
           </S.Menu>
 

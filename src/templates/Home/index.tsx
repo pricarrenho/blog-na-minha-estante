@@ -24,6 +24,10 @@ export function HomeTemplate() {
       <div>
         <Head>
           <title>Na Minha Estante</title>
+          <meta
+            name="description"
+            content="Descubra resenhas envolventes e sinceras, mergulhe nas curiosidades dos autores e encante-se com contos cativantes"
+          />
         </Head>
       </div>
 
