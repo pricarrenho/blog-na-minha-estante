@@ -27,7 +27,6 @@ export const Wrapper = styled.div`
         font-size: 32px;
         font-weight: 800;
         color: ${theme.colors.secondary[200]};
-        font-display: swap;
       }
 
       &:hover::before {
