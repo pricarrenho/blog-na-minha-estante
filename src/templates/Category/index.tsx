@@ -11,6 +11,7 @@ import * as S from "./styles";
 
 export function CategoryTemplate({ category }: CategoryProps) {
   const categorySlug = category?.slug as string;
+  const categoryDescription = category?.description as string;
 
   const { data } = useSWR(`/api/posts/${categorySlug}`, () =>
     getPostsByCategory(categorySlug)
@@ -24,6 +25,7 @@ export function CategoryTemplate({ category }: CategoryProps) {
       <div>
         <Head>
           <title> Na Minha Estante - {categoryTitle}</title>
+          <meta name="description" content={categoryDescription} />
         </Head>
       </div>
 

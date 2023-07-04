@@ -5,6 +5,7 @@ export const GET_CATEGORY = gql`
     category(where: { slug: $category }) {
       name
       slug
+      description
       subcategories {
         name
       }
