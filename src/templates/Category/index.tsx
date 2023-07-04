@@ -32,7 +32,10 @@ export function CategoryTemplate({ category }: CategoryProps) {
       <Header />
       <Container>
         <S.Content>
-          <Title type="primary">Últimas Postagens</Title>
+          <S.Title>
+            {categoryTitle} <span>❤</span>
+          </S.Title>
+
           <CardPostsCategories items={data} />
         </S.Content>
       </Container>
