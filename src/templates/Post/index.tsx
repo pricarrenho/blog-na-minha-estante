@@ -17,6 +17,7 @@ export function PostTemplate({ post }: PostTemplateProps) {
       <div>
         <Head>
           <title>Na Minha Estante - {data?.title} </title>
+          <meta name="description" content={data?.description} />
         </Head>
       </div>
 

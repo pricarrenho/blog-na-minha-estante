@@ -5,6 +5,7 @@ export const GET_POST = gql`
     post(where: { slug: $post }) {
       title
       slug
+      description
       category {
         name
         slug
