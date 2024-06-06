@@ -8,6 +8,8 @@ export const Wrapper = styled.div`
     box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 2;
+    position: sticky;
+    top: 0;
   `}
 `;
 
@@ -71,6 +73,7 @@ export const CategoriesLink = styled(Link)`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[900]};
     padding: 20px 10px;
+    transition: 0.2s;
 
     &:hover {
       color: ${theme.colors.primary[50]};
@@ -102,7 +105,7 @@ const MenuModifier = {
     }
     &:after {
       transform: translateY(-12px) rotate(-135deg);
-      margin-top: 14px;
+      margin-top: 15px;
       margin-left: -3px;
     }
     & div {
