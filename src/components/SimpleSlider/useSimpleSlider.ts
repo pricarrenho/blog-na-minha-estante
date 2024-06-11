@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useCallback, useState } from "react";
 import { Settings } from "react-slick";
+import { Post } from "./types";
 
 export const useSimpleSlider = () => {
   const [dragging, setDragging] = useState(false);
@@ -15,7 +16,7 @@ export const useSimpleSlider = () => {
   }, [setDragging]);
 
   const handleOnItemClick = useCallback(
-    (post: any) => {
+    (post: Post) => {
       if (dragging) return;
       route.push(`/${post.category?.slug}/${post.slug}`);
     },

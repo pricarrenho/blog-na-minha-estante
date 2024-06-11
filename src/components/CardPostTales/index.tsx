@@ -5,7 +5,7 @@ export function CardPostTales({ item, type }: CardPostTalesProps) {
   return (
     <S.Wrapper>
       {item
-        ?.map((post: any) => (
+        ?.map((post) => (
           <S.Card key={post.title} type={type}>
             <S.LinkContent href={`/${post.category?.slug}/${post.slug}`}>
               <S.PhotoBook

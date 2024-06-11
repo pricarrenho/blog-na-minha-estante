@@ -12,7 +12,7 @@ export function CardPostReviews({ item, type }: CardPostReviewsProps) {
   return (
     <S.Wrapper>
       {item
-        ?.map((post: any) => (
+        ?.map((post) => (
           <S.Card key={post.title} type={type}>
             <Link href={`/${post.category?.slug}/${post.slug}`}>
               <S.PhotoBook

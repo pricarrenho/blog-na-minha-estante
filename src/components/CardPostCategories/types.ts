@@ -1,5 +1,5 @@
-export type CardPostReviewsProps = {
-  item?: {
+export type CardPostsCategoriesProps = {
+  items?: {
     slug: string;
     title: string;
     description: string;
@@ -11,5 +11,4 @@ export type CardPostReviewsProps = {
       url: string;
     };
   }[];
-  type: "primary" | "secondary";
 };

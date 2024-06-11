@@ -44,7 +44,7 @@ export function Header() {
           </S.Menu>
 
           <S.MenuContent show={mobileMenuOpened}>
-            {data?.map((category: any) => (
+            {data?.map((category) => (
               <li key={category.name}>
                 <S.CategoriesLink
                   href={`/${category.slug}`}

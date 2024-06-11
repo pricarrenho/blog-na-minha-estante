@@ -1,8 +1,9 @@
 import Slider from "react-slick";
 import { useSimpleSlider } from "./useSimpleSlider";
+import { SimpleSliderProps } from "./types";
 import * as S from "./styles";
 
-export function SimpleSlider({ item }: any) {
+export function SimpleSlider({ item }: SimpleSliderProps) {
   const { settings, handleOnItemClick } = useSimpleSlider();
 
   const minifyDescription = (value: string) => {
@@ -14,7 +15,7 @@ export function SimpleSlider({ item }: any) {
   return (
     <S.Wrapper>
       <Slider {...settings}>
-        {item?.map((post: any, index: number) => (
+        {item?.map((post, index) => (
           <S.SliderItem key={post.title}>
             <div onClick={() => handleOnItemClick(post)}>
               <S.PhotoBook

@@ -6,7 +6,7 @@ export function CardPostAuthor({ item, type }: CardPostAuthorProps) {
   return (
     <S.ContentCard>
       {item
-        ?.map((post: any) => (
+        ?.map((post) => (
           <Link href={`/${post.category?.slug}/${post.slug}`} key={post.title}>
             <S.Card type={type}>
               <S.PhotoBook

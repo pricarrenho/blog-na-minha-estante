@@ -1,7 +1,8 @@
 import Link from "next/link";
+import { CardPostsCategoriesProps } from "./types";
 import * as S from "./styles";
 
-export function CardPostsCategories({ items }: any) {
+export function CardPostsCategories({ items }: CardPostsCategoriesProps) {
   const minifyDescription = (value: string) => {
     const maxLength = 90;
 
@@ -10,7 +11,7 @@ export function CardPostsCategories({ items }: any) {
 
   return (
     <S.Wrapper>
-      {items?.map((post: any) => (
+      {items?.map((post) => (
         <S.Card key={post.title}>
           <Link href={`/${post.category?.slug}/${post.slug}`}>
             <S.PhotoBook
