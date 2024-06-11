@@ -32,13 +32,13 @@ type MenuContentProps = {
 
 export const MenuContentModifier = {
   show: () => css`
-    display: flex;
+    left: 0;
   `,
 };
 
 export const MenuContent = styled.div<MenuContentProps>`
   ${({ theme, show }) => css`
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 24px;
     padding: 40px;
@@ -47,11 +47,12 @@ export const MenuContent = styled.div<MenuContentProps>`
     text-align: center;
     position: fixed;
     top: 68px;
-    left: 0;
+    left: 100vw;
     width: 100vw;
     background-color: ${theme.colors.white};
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
     z-index: 1;
+    transition: left 0.4s;
 
     ${show && MenuContentModifier.show}
 
@@ -60,8 +61,7 @@ export const MenuContent = styled.div<MenuContentProps>`
       padding: 0px;
       flex-direction: row;
       box-shadow: none;
-      position: relative;
-      top: 0px;
+      position: unset;
       width: max-content;
       height: 100%;
       align-items: center;
