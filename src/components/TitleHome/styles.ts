@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Gloria_Hallelujah } from "@next/font/google";
+import { Gloria_Hallelujah } from "next/font/google";
 
 const gloria = Gloria_Hallelujah({
   weight: ["400"],

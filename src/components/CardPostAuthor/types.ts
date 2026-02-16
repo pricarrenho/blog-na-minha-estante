@@ -3,10 +3,7 @@ export type CardPostAuthorProps = {
     slug: string;
     title: string;
     description: string;
-    category: {
-      name: string;
-      slug: string;
-    };
+    category?: { name?: string | null; slug?: string | null } | null;
     bannerImage: {
       url: string;
     };
