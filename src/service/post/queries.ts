@@ -10,6 +10,10 @@ export const GET_POST = gql`
         name
         slug
       }
+      subcategories(first: 100, orderBy: name_ASC) {
+        name
+        slug
+      }
       content {
         html
       }
@@ -21,13 +25,16 @@ export const GET_POST = gql`
 `;
 
 export const GET_POSTS = gql`
-  query getPosts {
-    posts(orderBy: createdAt_DESC) {
+  query getPosts($first: Int!, $skip: Int!) {
+    posts(first: $first, skip: $skip, orderBy: publishedAt_DESC) {
       slug
       title
       category {
         name
         slug
+      }
+      subcategories {
+        name
       }
       bannerImage {
         url
@@ -37,19 +44,26 @@ export const GET_POSTS = gql`
   }
 `;
 
-export const GET_POSTS_BY_CATEGORY = gql`
-  query getPostsByCategory($category: String) {
-    posts(where: { category: { slug: $category } }) {
-      slug
-      title
-      category {
-        name
-        slug
+export const GET_POSTS_PAGE = gql`
+  query getPostsPage($where: PostWhereInput!, $first: Int!, $skip: Int!) {
+    postsConnection(where: $where, first: $first, skip: $skip, orderBy: publishedAt_DESC) {
+      aggregate {
+        count
       }
-      bannerImage {
-        url
+      edges {
+        node {
+          slug
+          title
+          category {
+            name
+            slug
+          }
+          bannerImage {
+            url
+          }
+          description
+        }
       }
-      description
     }
   }
 `;

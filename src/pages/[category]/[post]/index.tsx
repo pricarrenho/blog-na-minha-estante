@@ -1,40 +1,19 @@
-import { GetStaticProps } from "next";
+import { optionalPageData, withPageData } from "service/pageData";
 import { getPost } from "service/post/getPost";
 import { getPosts } from "service/post/getPosts";
 import { PostTemplate } from "templates/Post";
-import { PostTemplateProps } from "templates/Post/types";
 
-export default function Post({ post }: PostTemplateProps) {
-  return <PostTemplate post={post} />;
-}
+export default PostTemplate;
 
-export async function getStaticPaths() {
-  const posts = await getPosts();
+export const getServerSideProps = withPageData(async ({ params }) => {
+  if (typeof params?.post !== "string") return { notFound: true };
 
-  const paths = posts.map((post) => {
-    const category = post.category?.slug || "";
-
-    return {
-      params: { post: post.slug, category: category },
-    };
-  });
-
-  return { paths, fallback: true };
-}
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const paramPost = params?.post as string;
-
-  const post = await getPost(paramPost);
-
-  const currentPost = `/api/post/${paramPost}`;
+  const postRequest = getPost(params.post);
+  const recommendations = getPosts(3).catch(() => null);
+  const post = await postRequest;
+  if (!post || post.category?.slug !== params.category) return { notFound: true };
 
   return {
-    props: {
-      fallback: {
-        [currentPost]: post,
-      },
-      post: paramPost,
-    },
+    props: { post, recommendations: (await optionalPageData(recommendations)) ?? [] },
   };
-};
+});

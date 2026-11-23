@@ -1,9 +1,13 @@
 import { GetPostsQuery } from "gql/graphql";
-import { api } from "../api";
+import { cachedQuery } from "../queryCache";
 import { GET_POSTS } from "./queries";
 
-export const getPosts = async () => {
-  const { posts } = await api.request<GetPostsQuery>(GET_POSTS);
+export type SearchablePost = GetPostsQuery["posts"][number] & {
+  subcategories: { name: string }[];
+};
+
+export const getPosts = async (first = 100, skip = 0) => {
+  const { posts } = await cachedQuery<{ posts: SearchablePost[] }>(GET_POSTS, { first, skip });
 
   return posts;
 };

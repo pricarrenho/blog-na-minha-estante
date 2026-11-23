@@ -30,35 +30,18 @@ Clone the project and access the folder
 $ git clone https://github.com/pricarrenho/blog-na-minha-estante && cd blog-na-minha-estante
 ```
 
-Add environment
+Use Node.js 24, as specified in `.nvmrc`. If you use NVM, run `nvm install` and `nvm use`.
+
+Copy `.env.example` to `.env.local` if you do not already have one, and set `NEXT_PUBLIC_GRAPHQL_URL` to the Hygraph content API endpoint.
 
 ```bash
-# Add your environment variable based on .env.example
-NEXT_PUBLIC_GRAPHQL_URL=//add here your graphql url
-
+corepack yarn@1.22.22 install --frozen-lockfile
+npm run dev
 ```
 
-Follow the steps below
+Open [http://localhost:3000](http://localhost:3000), or use the address printed in the terminal if port 3000 is occupied.
 
-```bash
-# Install the dependencies
-$ npm install
-
-# Start the project
-$ npm start
-
-```
-
-Or with Yarn
-
-```bash
-# Install the dependencies
-$ yarn install
-
-# Start the project
-$ yarn start
-
-```
+The development server needs access to the configured Hygraph endpoint. If the page reports that content is temporarily unavailable, check the endpoint and your connection, then reload the page.
 
 ## 💻 Project
 

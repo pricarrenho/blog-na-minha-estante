@@ -23,6 +23,11 @@ export const GET_CATEGORIES = gql`
       id
       name
       slug
+      description
+      subcategories(first: 100, orderBy: name_ASC) {
+        name
+        slug
+      }
     }
   }
 `;

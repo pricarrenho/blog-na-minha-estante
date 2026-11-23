@@ -1,36 +1,26 @@
-import { getCategories } from "service/category/getCategories";
-import { getCategory } from "service/category/getCategory";
-import { GetStaticProps } from "next";
-import { CategoryProps } from "templates/Category/types";
+import { withPageData } from "service/pageData";
+import { getPostsPage, readPage } from "service/post/getPostsPage";
 import { CategoryTemplate } from "templates/Category";
 
-export default function Category({ category }: CategoryProps) {
-  return <CategoryTemplate category={category} />;
-}
+export default CategoryTemplate;
 
-export async function getStaticPaths() {
-  const categories = await getCategories();
+export const getServerSideProps = withPageData(async ({ params, query }, categories) => {
+  const page = readPage(query.pagina);
+  if (page === null) return { notFound: true };
 
-  const paths = categories.map((category) => ({
-    params: { category: category.slug },
-  }));
+  const category = (await categories).find(({ slug }) => slug === params?.category);
+  if (!category) return { notFound: true };
 
-  return { paths, fallback: false };
-}
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const categorySlug = params?.category as string;
-
-  const category = await getCategory(categorySlug);
-
-  const currentCategory = `/api/post/${categorySlug}`;
+  const listing = await getPostsPage({ category: { slug: category.slug } }, page);
+  if (page > listing.pageCount) return { notFound: true };
 
   return {
     props: {
-      fallback: {
-        [currentCategory]: category,
-      },
-      category,
+      ...listing,
+      title: category.name,
+      description: category.description ?? null,
+      breadcrumbs: [{ label: category.name }],
+      path: `/${category.slug}`,
     },
   };
-};
+});

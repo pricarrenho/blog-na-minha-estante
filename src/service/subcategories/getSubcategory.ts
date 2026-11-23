@@ -1,9 +1,9 @@
 import { GetSubcategoriesQuery } from "gql/graphql";
-import { api } from "../api";
+import { cachedQuery } from "../queryCache";
 import { GET_SUBCATEGORIES } from "./queries";
 
 export const getSubcategories = async () => {
-  const { subcategories } = await api.request<GetSubcategoriesQuery>(
+  const { subcategories } = await cachedQuery<GetSubcategoriesQuery>(
     GET_SUBCATEGORIES
   );
 

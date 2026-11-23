@@ -2,18 +2,21 @@ import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
+    margin-top: 40px;
     background-color: ${theme.colors.primary[50]};
+
+    @media (min-width: 800px) {
+      margin-top: 80px;
+    }
   `}
 `;
 
 export const Content = styled.div`
   ${({ theme }) => css`
-    padding: 8px 0px;
-    margin-top: 40px;
+    padding: 8px 0;
 
     @media (min-width: 800px) {
-      padding: 16px 0px;
-      margin-top: 80px;
+      padding: 16px 0;
     }
   `}
 `;

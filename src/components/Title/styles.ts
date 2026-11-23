@@ -12,12 +12,8 @@ const TitleModifier = {
       border-color: ${theme.colors.primary[50]};
     }
 
-    &:hover {
+    &:hover, a:focus-visible & {
       background-color: ${theme.colors.primary[50]};
-
-      ::before {
-        background-color: ${theme.colors.primary[50]};
-      }
     }
   `,
   secondary: (theme: DefaultTheme) => css`
@@ -28,12 +24,8 @@ const TitleModifier = {
       border-color: ${theme.colors.secondary[200]};
     }
 
-    &:hover {
+    &:hover, a:focus-visible & {
       background-color: ${theme.colors.secondary[200]};
-
-      ::before {
-        background-color: ${theme.colors.secondary[200]};
-      }
     }
   `,
 };
@@ -67,7 +59,7 @@ export const Title = styled.h2<StyledTitleProps>`
       transition: color 0.2s, background-color 0.2s;
     }
 
-    &:hover {
+    &:hover, a:focus-visible & {
       color: ${theme.colors.white};
     }
 

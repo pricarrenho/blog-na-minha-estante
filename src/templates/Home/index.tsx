@@ -1,6 +1,6 @@
 import Head from "next/head";
 import useSWR from "swr";
-import { getPosts } from "service/post/getPosts";
+import type { getPosts } from "service/post/getPosts";
 import { Container } from "components/Container";
 import { Footer } from "components/Footer";
 import { Header } from "components/Header";
@@ -13,7 +13,7 @@ import { CardPostAuthor } from "components/CardPostAuthor";
 import * as S from "./styles";
 
 export function HomeTemplate() {
-  const { data } = useSWR("/api/posts", getPosts);
+  const { data } = useSWR<Awaited<ReturnType<typeof getPosts>>>("/api/posts", null);
 
   const contos = data?.filter((item) => item?.category?.slug === "contos");
   const resenhas = data?.filter((item) => item?.category?.slug === "resenhas");
