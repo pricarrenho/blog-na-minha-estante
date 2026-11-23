@@ -14,9 +14,9 @@ export function CardAuthor() {
       <S.Title>Priscilla Carrenho</S.Title>
 
       <S.ContentText>
-        Criadora e editora do Na Minha Estante. Graduanda em Análise e
-        Desenvolvimento de Sistemas, porém apaixonada por livros desde que se
-        lembra por gente.
+        Criadora e editora do Na Minha Estante. Formada em Análise e
+        Desenvolvimento de Sistemas e apaixonada por livros desde que se
+        entende por gente.
       </S.ContentText>
     </S.Wrapper>
   );
